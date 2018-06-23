@@ -9,7 +9,7 @@ from mininet.link import TCLink
 from mininet.log import info, setLogLevel
 setLogLevel('info')
 
-net = Containernet(controller=Controller)
+net = Containernet(controller=RemoteController)
 info('*** Adding controller\n')
 net.addController( 'c0', controller=RemoteController, ip='172.31.2.32', port=6653 )
 info('*** Adding docker containers\n')

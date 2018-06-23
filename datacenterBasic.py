@@ -9,10 +9,10 @@ setLogLevel('info')
 
 class DatacenterBasicTopo( Topo ):
     "Datacenter topology with 4 hosts per rack, 4 racks, and a root switch"
-    net = Containernet(controller=RemoteController)
+    self = Containernet(controller=RemoteController)
     info('*** Adding controller\n')
-    net.addController( 'c0', controller=RemoteController, ip='172.31.2.32', port=6653 )
-    
+    self.addController( 'c0', controller=RemoteController, ip='172.31.2.32', port=6653 )
+
     def build( self ):
         self.racks = []
         rootSwitch = self.addSwitch( 's1' )

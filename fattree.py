@@ -3,7 +3,7 @@
 This is the most simple example to showcase Containernet.
 """
 from mininet.net import Containernet
-from mininet.node import Controller
+from mininet.node import RemoteController
 from mininet.cli import CLI
 from mininet.link import TCLink
 from mininet.log import info, setLogLevel

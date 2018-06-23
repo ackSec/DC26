@@ -37,6 +37,6 @@ class DatacenterBasicTopo:
         return [switch]
 
 # Allows the file to be imported using `mn --custom <filename> --topo faucet`
-topos = {
-    'faucet': DatacenterBasicTopo
-}
+#topos = {
+#    'faucet': DatacenterBasicTopo
+#}

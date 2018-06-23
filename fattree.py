@@ -11,7 +11,7 @@ setLogLevel('info')
 
 net = Containernet(controller=Controller)
 info('*** Adding controller\n')
-net.addController('c0')
+net.addController( 'c0', controller=RemoteController, ip='172.31.2.32', port=6653 )
 info('*** Adding docker containers\n')
 d1 = net.addDocker('d1', ip='10.0.0.251', dimage="ubuntu:trusty")
 d2 = net.addDocker('d2', ip='10.0.0.252', dimage="ubuntu:trusty")

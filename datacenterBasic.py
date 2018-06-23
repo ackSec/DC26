@@ -7,7 +7,7 @@ from mininet.link import TCLink
 from mininet.log import info, setLogLevel
 setLogLevel('info')
 
-class DatacenterBasicTopo( Topo ):
+class DatacenterBasicTopo:
     "Datacenter topology with 4 hosts per rack, 4 racks, and a root switch"
     self = Containernet(controller=RemoteController)
     info('*** Adding controller\n')

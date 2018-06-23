@@ -5,5 +5,5 @@ MAINTAINER Name <email.id@here>
 
 RUN apt update && apt upgrade -y && apt-get install -y git
 RUN git clone https://github.com/smythtech/sdnpwn.git
-RUN chmod +x sdnpwn/sdnpwn.py && sudo chmod +x sdnpwn/setup.sh
+RUN chmod +x sdnpwn/sdnpwn.py && chmod +x sdnpwn/setup.sh
 RUN ./setup.sh

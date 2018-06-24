@@ -7,5 +7,5 @@ RUN cd ~
 RUN apt update && apt upgrade -y && apt-get install -y git
 RUN git clone https://github.com/smythtech/sdnpwn.git
 RUN chmod +x sdnpwn/sdnpwn.py && chmod +x sdnpwn/setup.sh
-RUN cd sdnpwn/setup.sh
+RUN sdnpwn/setup.sh
 RUN cd ~

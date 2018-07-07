@@ -7,11 +7,11 @@ output "workstation_id" {
 }
 
 output "jumpbox_id" {
-  value = "${aws_instance.jumpbox.*.id}"
+  value = "${aws_instance.jumpbox.id}"
 }
 
 output "jumpbox_public_dns" {
-  value = "${aws_instance.jumpbox.*.public_dns}"
+  value = "${aws_instance.jumpbox.public_dns}"
 }
 
 output "my_ip" {

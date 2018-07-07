@@ -1,0 +1,74 @@
+<user-mapping>
+  <!-- 0 - Aber1934 - ip-192-168-8-169.ec2.internal -->
+  <authorize username="Aber1934" password="mAtpeA">
+    <protocol>ssh</protocol>
+    <param name="hostname">ip-192-168-8-169.ec2.internal</param>
+    <param name="port">22</param>
+    <param name="username">Aber1934</param>
+    <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAxZgi8XrVP7xZRV0Mg+sCH2EzHeQ1K2JFSTawzFDOFBHHDxeM
+rGLGoW5zK+IEAMC/5zrl7GA09SahdxHeR15uGvbT3unyGFlzeXGzp6Di/b5hGmbm
+ZMEyGrgZk7Ll40BGZ2n9a03ek/WkZuiJhVbX3AN2JClDsHeo8wlcf6hVCiIUWJbu
+3UCLqZ9rlmZZECs4/Knpz8RkPqnPBLynPsPTpMEJdlJ2azELD1Bv+ciPmQD10Az9
+6ZL+4hKLyO9mC2e5tQNziZ/DVVwpobQHo6ehGACg/mU2UkoxhhdnaH4lfmEQyCUT
+cCxaJpEQKt1DbW4LSU9CzPq1ptY4Nzjv5JgDbwIDAQABAoIBAQCpzU6iE/uz9OkG
+WasKpmdBjib+VgF3EdEW1J/kRMCDsK9Ogd9KuOuXCLKCkIz+FKYVUKELm7WGwrbY
++wr4a+bU1y5FjueUEzLPt2067WCDzBnoNWtiREAJhBG+wmsZ+j9GWWgE0XsnzV2F
+benYI0QG9xaMhsV7nakbifzqWz8RH6nN6mSZVLZP+6a2O5bWxpqnURk9xbUxdlhS
+wC+qJXz+T/+WuqDtncLX+7g7KG2M2Q5FoMYGW8fEAvZouVlrOjI0qOGj/TqwqmzY
+dBUr/VAncf1EXZd0R3FQkie9Ptk2J1vKBrwFmiBV8mWAoyGDqteQax7+0dhl7V4E
+bLLCs/GJAoGBAPgiF2RvAhWv4LOgTk7LS48nA4AawVkYn/JmxDYCkR0xriGcqFY8
+KHkE6cV10jOz0W2K3eiOe+LTcd3EIInKr2RcLyWdaF57Gx63haqC8sBXL+rk5u61
+0zk+IovTL19Rq2mWop0rjsMQIqHY5RYkIQBABKoiRY+KfTSnDQmhznqrAoGBAMvb
+2/1zvh+yuciVuP9H49Dq3X0W/uTFFZhD8skpl6/DkPQsp+w1fn0YkSEmY7ZU/CKp
+KaquO8l2DtkVqNFw32Z5qCJRZ7bmYrWHBm7WOvT6NODH0drRpeCH1S7cM6YZ8Wnb
+1mihQL93HJBVk2It2U27U+rYiCkkxYsaVr/XF1pNAoGBAPBE8qnJ5Bbj642EGM+r
+g0rm2Djfr4F6msa6RByYd7PxO1BIxahbMEWfQE54PEbcRFryMNbTwZpubL/0/hzv
+Ks7fhLfDqCB0zFn+E2x8yFr/EeM+K2/SmOnBBOqoYCLIjlb8ChJu7xprMV3PDGVY
+LqxzURD9hqXr0Dl/2NwO1kVpAoGBALTgtffTS31KkkckeYmgGsYSrkVAMxd+uyNo
+HrJYQiuEpUfRm4kdCccrFhJIwq5UB4clez/i6k9dfd0lt61lrgJ5rTIN8q05C5ov
+XQjY8mTM4EAVa+DwpXJscz3pybX2TNp1YW9irFV19RUnqOay8Z1juhik2WNQKiq7
+Sv9adHD9AoGAIctyTMNcQlzlfKN65xS5XvfK/5LPfRGxywkqyflF7aisWUj1THPj
+pz6SXFZktK2oEVin0anipNkERghQgSkDy0dFZhBw0jGsGXn09IR9o1UU72jKtzM9
+VYr1tfLQGPcpPgXKTwfohLQu+AO5DNnbPYedYhC60BZQb88p6AJZBW4=
+-----END RSA PRIVATE KEY-----</param>
+    <param name="color-scheme">white-black</param>
+    <param name="font-size">10</param>
+  </authorize>
+  <!-- 1 - Abey1988 - ip-192-168-3-46.ec2.internal -->
+  <authorize username="Abey1988" password="zDZAUL">
+    <protocol>ssh</protocol>
+    <param name="hostname">ip-192-168-3-46.ec2.internal</param>
+    <param name="port">22</param>
+    <param name="username">Abey1988</param>
+    <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAxZgi8XrVP7xZRV0Mg+sCH2EzHeQ1K2JFSTawzFDOFBHHDxeM
+rGLGoW5zK+IEAMC/5zrl7GA09SahdxHeR15uGvbT3unyGFlzeXGzp6Di/b5hGmbm
+ZMEyGrgZk7Ll40BGZ2n9a03ek/WkZuiJhVbX3AN2JClDsHeo8wlcf6hVCiIUWJbu
+3UCLqZ9rlmZZECs4/Knpz8RkPqnPBLynPsPTpMEJdlJ2azELD1Bv+ciPmQD10Az9
+6ZL+4hKLyO9mC2e5tQNziZ/DVVwpobQHo6ehGACg/mU2UkoxhhdnaH4lfmEQyCUT
+cCxaJpEQKt1DbW4LSU9CzPq1ptY4Nzjv5JgDbwIDAQABAoIBAQCpzU6iE/uz9OkG
+WasKpmdBjib+VgF3EdEW1J/kRMCDsK9Ogd9KuOuXCLKCkIz+FKYVUKELm7WGwrbY
++wr4a+bU1y5FjueUEzLPt2067WCDzBnoNWtiREAJhBG+wmsZ+j9GWWgE0XsnzV2F
+benYI0QG9xaMhsV7nakbifzqWz8RH6nN6mSZVLZP+6a2O5bWxpqnURk9xbUxdlhS
+wC+qJXz+T/+WuqDtncLX+7g7KG2M2Q5FoMYGW8fEAvZouVlrOjI0qOGj/TqwqmzY
+dBUr/VAncf1EXZd0R3FQkie9Ptk2J1vKBrwFmiBV8mWAoyGDqteQax7+0dhl7V4E
+bLLCs/GJAoGBAPgiF2RvAhWv4LOgTk7LS48nA4AawVkYn/JmxDYCkR0xriGcqFY8
+KHkE6cV10jOz0W2K3eiOe+LTcd3EIInKr2RcLyWdaF57Gx63haqC8sBXL+rk5u61
+0zk+IovTL19Rq2mWop0rjsMQIqHY5RYkIQBABKoiRY+KfTSnDQmhznqrAoGBAMvb
+2/1zvh+yuciVuP9H49Dq3X0W/uTFFZhD8skpl6/DkPQsp+w1fn0YkSEmY7ZU/CKp
+KaquO8l2DtkVqNFw32Z5qCJRZ7bmYrWHBm7WOvT6NODH0drRpeCH1S7cM6YZ8Wnb
+1mihQL93HJBVk2It2U27U+rYiCkkxYsaVr/XF1pNAoGBAPBE8qnJ5Bbj642EGM+r
+g0rm2Djfr4F6msa6RByYd7PxO1BIxahbMEWfQE54PEbcRFryMNbTwZpubL/0/hzv
+Ks7fhLfDqCB0zFn+E2x8yFr/EeM+K2/SmOnBBOqoYCLIjlb8ChJu7xprMV3PDGVY
+LqxzURD9hqXr0Dl/2NwO1kVpAoGBALTgtffTS31KkkckeYmgGsYSrkVAMxd+uyNo
+HrJYQiuEpUfRm4kdCccrFhJIwq5UB4clez/i6k9dfd0lt61lrgJ5rTIN8q05C5ov
+XQjY8mTM4EAVa+DwpXJscz3pybX2TNp1YW9irFV19RUnqOay8Z1juhik2WNQKiq7
+Sv9adHD9AoGAIctyTMNcQlzlfKN65xS5XvfK/5LPfRGxywkqyflF7aisWUj1THPj
+pz6SXFZktK2oEVin0anipNkERghQgSkDy0dFZhBw0jGsGXn09IR9o1UU72jKtzM9
+VYr1tfLQGPcpPgXKTwfohLQu+AO5DNnbPYedYhC60BZQb88p6AJZBW4=
+-----END RSA PRIVATE KEY-----</param>
+    <param name="color-scheme">white-black</param>
+    <param name="font-size">10</param>
+  </authorize>
+</user-mapping>

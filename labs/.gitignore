@@ -2,3 +2,5 @@
 zz_bak
 terraform.tfstate*
 infra/ssh/*
+user-list-result.csv
+user-mapping.xml

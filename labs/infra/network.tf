@@ -17,7 +17,7 @@ resource "aws_vpc" "default" {
 resource "aws_subnet" "default" {
   vpc_id            = "${aws_vpc.default.id}"
   cidr_block        = "192.168.0.0/20"
-  availability_zone = "us-west-2a"
+  availability_zone = "us-east-1a"
 
   tags = {
     Name = "${var.environment}-subnet"

@@ -52,6 +52,11 @@ variable "user_mapping_file" {
   default = "users/user-mapping.xml"
 }
 
+variable "user_url_mapping_file" {
+  description = "user_url_mapping.conf file name"
+  default = "users/user_url_mapping.conf"
+}
+
 variable "user_list_file" {
   description = "List of users"
   default = "users/user-list.csv"

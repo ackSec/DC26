@@ -20,10 +20,75 @@ resource "null_resource" "user_mapping_start" {
   }
 }
 
+resource "null_resource" "user_mapping_body" {
+  count       = "${var.workstation_count}"
+  depends_on  = ["null_resource.user_mapping_start"]
+
+  provisioner "local-exec" {
+    command = <<EOF
+    user_id=${count.index}
+    user_name=${element(keys(data.external.user_list.result), count.index)}
+    user_password=${element(random_string.password.*.result, count.index)}
+
+    user_host_wks=${element(aws_instance.workstation.*.private_dns, count.index)}
+    user_host_cnt=${element(aws_instance.controller.*.private_dns, count.index)}
+
+    # Add a user-mapping record
+    cat >>${var.user_mapping_file}<<EOU
+    <!-- $user_id - $user_name - $user_host_wks - WORKSTATION -->
+    <authorize username="$user_name" password="$user_password">
+      <!-- WORKSTATION -->
+      <connection name="Workstation">
+        <protocol>ssh</protocol>
+        <param name="hostname">$user_host_wks</param>
+        <param name="port">22</param>
+        <param name="username">$user_name</param>
+        <param name="private-key">$(cat ssh/ssh_key)</param>
+        <param name="color-scheme">white-black</param>
+        <param name="font-size">10</param>
+      </connection>
+
+      <!-- CONTROLLER -->
+      <connection name="Controller">
+        <protocol>ssh</protocol>
+        <param name="hostname">$user_host_cnt</param>
+        <param name="port">22</param>
+        <param name="username">$user_name</param>
+        <param name="private-key">$(cat ssh/ssh_key)</param>
+        <param name="color-scheme">white-black</param>
+        <param name="font-size">10</param>
+      </connection>
+    </authorize>
+    EOU
+
+    # Add a user url mapping record
+    cat >>${var.user_url_mapping_file}<<EOU
+    # $user_id - $user_name - $user_host - CONTROLLER
+    location /$user_name {
+      proxy_pass http://$user_host:80/;
+      proxy_set_header Host \$host;
+      proxy_set_header X-Real-IP \$remote_addr;
+
+      if (\$remote_user != "$user_name") {
+        return 403;
+      }
+
+      auth_basic           "Dashboard access";
+      auth_basic_user_file /etc/nginx/.htpasswd;
+    }
+
+    EOU
+
+    # Add a user-list csv record
+    echo "$user_name,$user_password,$user_host" >> ${var.user_list_file_result}
+    EOF
+  }
+}
+
 # actions after workstation creation
 #   - finish user-mapping.xml file
 resource "null_resource" "user_mapping_end" {
-  depends_on    = ["aws_instance.workstation"]
+  depends_on    = ["null_resource.user_mapping_body"]
 
   provisioner "local-exec" {
     command = <<EOF
@@ -56,32 +121,32 @@ resource "aws_instance" "workstation" {
   }
 
   # add user to user-mapping.xml for guacamole
-  provisioner "local-exec" {
-    command = <<EOF
-user_id=${count.index}
-user_name=${element(keys(data.external.user_list.result), count.index)}
-user_password=${element(random_string.password.*.result, count.index)}
-#'${element(values(data.external.user_list.result), count.index)}'
-user_host=${self.private_dns}
-
-# Add a user-mapping record
-cat >>${var.user_mapping_file}<<EOU
-  <!-- $user_id - $user_name - $user_host -->
-  <authorize username="$user_name" password="$user_password">
-    <protocol>ssh</protocol>
-    <param name="hostname">$user_host</param>
-    <param name="port">22</param>
-    <param name="username">$user_name</param>
-    <param name="private-key">$(cat ssh/ssh_key)</param>
-    <param name="color-scheme">white-black</param>
-    <param name="font-size">10</param>
-  </authorize>
-EOU
-
-# Add a user-list csv record
-echo "$user_name,$user_password,$user_host" >> ${var.user_list_file_result}
-EOF
-  }
+//  provisioner "local-exec" {
+//    command = <<EOF
+//user_id=${count.index}
+//user_name=${element(keys(data.external.user_list.result), count.index)}
+//user_password=${element(random_string.password.*.result, count.index)}
+//#'${element(values(data.external.user_list.result), count.index)}'
+//user_host=${self.private_dns}
+//
+//# Add a user-mapping record
+//cat >>${var.user_mapping_file}<<EOU
+//  <!-- $user_id - $user_name - $user_host - WORKSTATION -->
+//  <authorize username="$user_name" password="$user_password">
+//    <protocol>ssh</protocol>
+//    <param name="hostname">$user_host</param>
+//    <param name="port">22</param>
+//    <param name="username">$user_name</param>
+//    <param name="private-key">$(cat ssh/ssh_key)</param>
+//    <param name="color-scheme">white-black</param>
+//    <param name="font-size">10</param>
+//  </authorize>
+//EOU
+//
+//# Add a user-list csv record
+//echo "$user_name,$user_password,$user_host" >> ${var.user_list_file_result}
+//EOF
+//  }
 
   # upload public key to workstation
   provisioner "file" {

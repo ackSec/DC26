@@ -3,8 +3,6 @@ version: "3.3"
 services:
   guacamole:
     image: guacamole/guacamole
-    ports:
-      - "8080:8080"
     networks:
       - overlay
     env_file: docker.env
@@ -17,8 +15,6 @@ services:
 
   guacd:
     image: guacamole/guacd
-    ports:
-      - "4822:4822"
     networks:
       - overlay
     env_file: docker.env
@@ -34,7 +30,8 @@ services:
       - overlay
     env_file: docker.env
     volumes:
-      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/include:/etc/nginx/include:ro
       - ./nginx/.htpasswd:/etc/nginx/.htpasswd:ro
       - ./nginx/html:/usr/local/nginx/html:ro
     deploy:

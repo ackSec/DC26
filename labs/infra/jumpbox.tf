@@ -25,8 +25,12 @@ resource "aws_instance" "jumpbox" {
     private_key = "${file(var.aws_ssh_key_file)}"
   }
 
+  # copy generated files to guacamole and nginx
   provisioner "local-exec" {
-    command = "cp ${var.user_mapping_file} ../jumpbox/guacamole/"
+    command = <<EOF
+      cp ${var.user_mapping_file} ../jumpbox/guacamole/
+      cp ${var.user_url_mapping_file} ../jumpbox/nginx/include/
+    EOF
   }
 
   provisioner "remote-exec" {

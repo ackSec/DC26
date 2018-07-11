@@ -26,7 +26,7 @@ variable "aws_ssh_key_file" {
 
 variable "aws_region" {
   description = "Region where the AWS resource will be created"
-  default = "us-east-1"
+  default = "us-west-2"
 }
 
 # General configuration

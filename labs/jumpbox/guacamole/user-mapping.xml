@@ -1,146 +1,695 @@
 <user-mapping>
-  <!-- 1 - Abey1988 - ip-192-168-6-13.ec2.internal - WORKSTATION -->
-  <authorize username="Abey1988" password="oc2enx">
-    <protocol>ssh</protocol>
-    <param name="hostname">ip-192-168-6-13.ec2.internal</param>
-    <param name="port">22</param>
-    <param name="username">Abey1988</param>
-    <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
-MIIEpAIBAAKCAQEArUtNDK4sj/rXvVCkgBsFIEGVqmi7PfQ3grmXwdyER9LCb8i7
-KRoPF+NiH+7yw46kg2aSsE3sPjKXJlioHdDmRY9mQ2DFG9Z0jVnEinFgpOLHMsLy
-uyonjOchvHLnF1u9LrmP5FUhP+Y/CXz0RkfMekTvgtmEqqNk3iKMk23AqO6ljwlH
-I48QNvmPedaWmY0oENdqbT1SYyYb/mB9cp+nZCq5WUPc4innES2MsPuel517oZPq
-OOydsltPKTiGuvEk1tfQx2boZ/MWdfdfW3DHxeMGwzI8W4FBu2kbcz6hpjbTRiA/
-dceY/URNmPqbNkwLePtWDqRUHc5KK5wesAle4QIDAQABAoIBAQCU41SAp4jL73W6
-RvX+xrhBvXeMYM027oNfAnv7aK4SU2cQycLcDnKXUJp220KieASqjM9NQLXPvoGU
-xakzbM7bRthS3Wqcf0XGSDEPzVd+cwU4fLw1yIMQkWiv03zu2bgR1AZn5ChcEUNp
-sHzjgT6ScnXh02cjgJziKYbkB/D2ciC34BQisPI6bMs68B/JNU6463PBPllDs8/D
-MKtX2YLIP8SqrMr7mtCFMnmo6r/cje3vBqQCvAx69FeWJWCkwQIRbCxtpIV7dl36
-yzNzbuhwpV7oFZEObIoDkSZwilFB+qYANqpYKGJbS62gp4aGofg9vlUbmrqV6Df/
-1maXNFMBAoGBAONpEO2dN+86GilZm3DC5+hrzaGsjs7Ocz0irwVPMRvJz0SUsfbw
-DD9hHkvvwmh07DxxJ45X13m1EHK/pJvN0DXJp5/fUyu17M4nEhLUFqTp1fnJ99QO
-WyEY/dzbyXXZv8nUL4AQV/LEXGAksjcKZflt9J+o0vYpsSt4vyIZMczxAoGBAMMU
-kShcI6rXNGuNFPMHnrmFk1u7weJjjPgBP/xyyq1nG0cuvgmIs5bNTX7H7FTCZyVM
-CT/e/azTVo1Ys4tLZb72EEn1aF16YWyY/5Odbs4ei2HCXQPIYj5w21MrpvAjW7Lo
-VTkMP6PzU3wLcuQlUCi/5teYuc02dQy7C4zOXnDxAoGARrbWH71Ctm4P0ondrwu8
-h2Z2U+7PnXlPFlShrfn5IFX50K6YRFxSwqaVgDF293pcN1NMZJPmGh92lOgI7LXs
-J72kFS+hsjbpAxXdJeOzguZ/tiPan6MzLTCTSElD9RSX8c+8UYtDfecXfoIKtNjT
-6uMJLViW+Rrvz7/FV3oUJVECgYEApyEwt2Yw/IWBGH93KjsmBgVlWNsD4YOuWy8e
-9ZYXA/ZozVRDZYGjcpgTQ4HefENNAQwihIDzziQFa/VJZRZEZhUDoYlJT4SwgMyX
-cY0YSCis+yT8cWg0mxAvJxMn42Y3gpA/qy9OOpUVuhlI5iL9iNvX1m+3BxQXtb9t
-xsVq7dECgYAsRScVDwuYwG/HMUweLqXLKd+xn6lRHcTEWMZ5eWmzmA7qtcrA0CZZ
-CfnWKExPRc1BL7s575xn6Qj3tyVwbB/OGifXsIPwG3uUoqOfpGseHPSbokW85c/8
-cDpQc4L/uHvp/CaS82L5bhFUJ+7J1Tak+h4ZWph680lpKT4MReZu8A==
+  <!-- 0 - Aber1934 - WORKSTATION -->
+  <authorize username="Aber1934" password="7cg2ux">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-13-246.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Aber1934</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
 -----END RSA PRIVATE KEY-----</param>
-    <param name="color-scheme">white-black</param>
-    <param name="font-size">10</param>
-  </authorize>
-  <!-- 1 - Abey1988 - ip-192-168-12-4.ec2.internal - CONTROLLER -->
-  <authorize username="Abey1988" password="oc2enx">
-    <protocol>ssh</protocol>
-    <param name="hostname">ip-192-168-12-4.ec2.internal</param>
-    <param name="port">22</param>
-    <param name="username">Abey1988</param>
-    <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
-MIIEpAIBAAKCAQEArUtNDK4sj/rXvVCkgBsFIEGVqmi7PfQ3grmXwdyER9LCb8i7
-KRoPF+NiH+7yw46kg2aSsE3sPjKXJlioHdDmRY9mQ2DFG9Z0jVnEinFgpOLHMsLy
-uyonjOchvHLnF1u9LrmP5FUhP+Y/CXz0RkfMekTvgtmEqqNk3iKMk23AqO6ljwlH
-I48QNvmPedaWmY0oENdqbT1SYyYb/mB9cp+nZCq5WUPc4innES2MsPuel517oZPq
-OOydsltPKTiGuvEk1tfQx2boZ/MWdfdfW3DHxeMGwzI8W4FBu2kbcz6hpjbTRiA/
-dceY/URNmPqbNkwLePtWDqRUHc5KK5wesAle4QIDAQABAoIBAQCU41SAp4jL73W6
-RvX+xrhBvXeMYM027oNfAnv7aK4SU2cQycLcDnKXUJp220KieASqjM9NQLXPvoGU
-xakzbM7bRthS3Wqcf0XGSDEPzVd+cwU4fLw1yIMQkWiv03zu2bgR1AZn5ChcEUNp
-sHzjgT6ScnXh02cjgJziKYbkB/D2ciC34BQisPI6bMs68B/JNU6463PBPllDs8/D
-MKtX2YLIP8SqrMr7mtCFMnmo6r/cje3vBqQCvAx69FeWJWCkwQIRbCxtpIV7dl36
-yzNzbuhwpV7oFZEObIoDkSZwilFB+qYANqpYKGJbS62gp4aGofg9vlUbmrqV6Df/
-1maXNFMBAoGBAONpEO2dN+86GilZm3DC5+hrzaGsjs7Ocz0irwVPMRvJz0SUsfbw
-DD9hHkvvwmh07DxxJ45X13m1EHK/pJvN0DXJp5/fUyu17M4nEhLUFqTp1fnJ99QO
-WyEY/dzbyXXZv8nUL4AQV/LEXGAksjcKZflt9J+o0vYpsSt4vyIZMczxAoGBAMMU
-kShcI6rXNGuNFPMHnrmFk1u7weJjjPgBP/xyyq1nG0cuvgmIs5bNTX7H7FTCZyVM
-CT/e/azTVo1Ys4tLZb72EEn1aF16YWyY/5Odbs4ei2HCXQPIYj5w21MrpvAjW7Lo
-VTkMP6PzU3wLcuQlUCi/5teYuc02dQy7C4zOXnDxAoGARrbWH71Ctm4P0ondrwu8
-h2Z2U+7PnXlPFlShrfn5IFX50K6YRFxSwqaVgDF293pcN1NMZJPmGh92lOgI7LXs
-J72kFS+hsjbpAxXdJeOzguZ/tiPan6MzLTCTSElD9RSX8c+8UYtDfecXfoIKtNjT
-6uMJLViW+Rrvz7/FV3oUJVECgYEApyEwt2Yw/IWBGH93KjsmBgVlWNsD4YOuWy8e
-9ZYXA/ZozVRDZYGjcpgTQ4HefENNAQwihIDzziQFa/VJZRZEZhUDoYlJT4SwgMyX
-cY0YSCis+yT8cWg0mxAvJxMn42Y3gpA/qy9OOpUVuhlI5iL9iNvX1m+3BxQXtb9t
-xsVq7dECgYAsRScVDwuYwG/HMUweLqXLKd+xn6lRHcTEWMZ5eWmzmA7qtcrA0CZZ
-CfnWKExPRc1BL7s575xn6Qj3tyVwbB/OGifXsIPwG3uUoqOfpGseHPSbokW85c/8
-cDpQc4L/uHvp/CaS82L5bhFUJ+7J1Tak+h4ZWph680lpKT4MReZu8A==
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-1-131.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Aber1934</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
 -----END RSA PRIVATE KEY-----</param>
-    <param name="color-scheme">white-black</param>
-    <param name="font-size">10</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
   </authorize>
-  <!-- 0 - Aber1934 - ip-192-168-6-249.ec2.internal - CONTROLLER -->
-  <authorize username="Aber1934" password="i4YPbP">
-    <protocol>ssh</protocol>
-    <param name="hostname">ip-192-168-6-249.ec2.internal</param>
-    <param name="port">22</param>
-    <param name="username">Aber1934</param>
-    <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
-MIIEpAIBAAKCAQEArUtNDK4sj/rXvVCkgBsFIEGVqmi7PfQ3grmXwdyER9LCb8i7
-KRoPF+NiH+7yw46kg2aSsE3sPjKXJlioHdDmRY9mQ2DFG9Z0jVnEinFgpOLHMsLy
-uyonjOchvHLnF1u9LrmP5FUhP+Y/CXz0RkfMekTvgtmEqqNk3iKMk23AqO6ljwlH
-I48QNvmPedaWmY0oENdqbT1SYyYb/mB9cp+nZCq5WUPc4innES2MsPuel517oZPq
-OOydsltPKTiGuvEk1tfQx2boZ/MWdfdfW3DHxeMGwzI8W4FBu2kbcz6hpjbTRiA/
-dceY/URNmPqbNkwLePtWDqRUHc5KK5wesAle4QIDAQABAoIBAQCU41SAp4jL73W6
-RvX+xrhBvXeMYM027oNfAnv7aK4SU2cQycLcDnKXUJp220KieASqjM9NQLXPvoGU
-xakzbM7bRthS3Wqcf0XGSDEPzVd+cwU4fLw1yIMQkWiv03zu2bgR1AZn5ChcEUNp
-sHzjgT6ScnXh02cjgJziKYbkB/D2ciC34BQisPI6bMs68B/JNU6463PBPllDs8/D
-MKtX2YLIP8SqrMr7mtCFMnmo6r/cje3vBqQCvAx69FeWJWCkwQIRbCxtpIV7dl36
-yzNzbuhwpV7oFZEObIoDkSZwilFB+qYANqpYKGJbS62gp4aGofg9vlUbmrqV6Df/
-1maXNFMBAoGBAONpEO2dN+86GilZm3DC5+hrzaGsjs7Ocz0irwVPMRvJz0SUsfbw
-DD9hHkvvwmh07DxxJ45X13m1EHK/pJvN0DXJp5/fUyu17M4nEhLUFqTp1fnJ99QO
-WyEY/dzbyXXZv8nUL4AQV/LEXGAksjcKZflt9J+o0vYpsSt4vyIZMczxAoGBAMMU
-kShcI6rXNGuNFPMHnrmFk1u7weJjjPgBP/xyyq1nG0cuvgmIs5bNTX7H7FTCZyVM
-CT/e/azTVo1Ys4tLZb72EEn1aF16YWyY/5Odbs4ei2HCXQPIYj5w21MrpvAjW7Lo
-VTkMP6PzU3wLcuQlUCi/5teYuc02dQy7C4zOXnDxAoGARrbWH71Ctm4P0ondrwu8
-h2Z2U+7PnXlPFlShrfn5IFX50K6YRFxSwqaVgDF293pcN1NMZJPmGh92lOgI7LXs
-J72kFS+hsjbpAxXdJeOzguZ/tiPan6MzLTCTSElD9RSX8c+8UYtDfecXfoIKtNjT
-6uMJLViW+Rrvz7/FV3oUJVECgYEApyEwt2Yw/IWBGH93KjsmBgVlWNsD4YOuWy8e
-9ZYXA/ZozVRDZYGjcpgTQ4HefENNAQwihIDzziQFa/VJZRZEZhUDoYlJT4SwgMyX
-cY0YSCis+yT8cWg0mxAvJxMn42Y3gpA/qy9OOpUVuhlI5iL9iNvX1m+3BxQXtb9t
-xsVq7dECgYAsRScVDwuYwG/HMUweLqXLKd+xn6lRHcTEWMZ5eWmzmA7qtcrA0CZZ
-CfnWKExPRc1BL7s575xn6Qj3tyVwbB/OGifXsIPwG3uUoqOfpGseHPSbokW85c/8
-cDpQc4L/uHvp/CaS82L5bhFUJ+7J1Tak+h4ZWph680lpKT4MReZu8A==
+  
+  <!-- 1 - Abey1988 - WORKSTATION -->
+  <authorize username="Abey1988" password="ccjgvy">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-8-177.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Abey1988</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
 -----END RSA PRIVATE KEY-----</param>
-    <param name="color-scheme">white-black</param>
-    <param name="font-size">10</param>
-  </authorize>
-  <!-- 0 - Aber1934 - ip-192-168-12-56.ec2.internal - WORKSTATION -->
-  <authorize username="Aber1934" password="i4YPbP">
-    <protocol>ssh</protocol>
-    <param name="hostname">ip-192-168-12-56.ec2.internal</param>
-    <param name="port">22</param>
-    <param name="username">Aber1934</param>
-    <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
-MIIEpAIBAAKCAQEArUtNDK4sj/rXvVCkgBsFIEGVqmi7PfQ3grmXwdyER9LCb8i7
-KRoPF+NiH+7yw46kg2aSsE3sPjKXJlioHdDmRY9mQ2DFG9Z0jVnEinFgpOLHMsLy
-uyonjOchvHLnF1u9LrmP5FUhP+Y/CXz0RkfMekTvgtmEqqNk3iKMk23AqO6ljwlH
-I48QNvmPedaWmY0oENdqbT1SYyYb/mB9cp+nZCq5WUPc4innES2MsPuel517oZPq
-OOydsltPKTiGuvEk1tfQx2boZ/MWdfdfW3DHxeMGwzI8W4FBu2kbcz6hpjbTRiA/
-dceY/URNmPqbNkwLePtWDqRUHc5KK5wesAle4QIDAQABAoIBAQCU41SAp4jL73W6
-RvX+xrhBvXeMYM027oNfAnv7aK4SU2cQycLcDnKXUJp220KieASqjM9NQLXPvoGU
-xakzbM7bRthS3Wqcf0XGSDEPzVd+cwU4fLw1yIMQkWiv03zu2bgR1AZn5ChcEUNp
-sHzjgT6ScnXh02cjgJziKYbkB/D2ciC34BQisPI6bMs68B/JNU6463PBPllDs8/D
-MKtX2YLIP8SqrMr7mtCFMnmo6r/cje3vBqQCvAx69FeWJWCkwQIRbCxtpIV7dl36
-yzNzbuhwpV7oFZEObIoDkSZwilFB+qYANqpYKGJbS62gp4aGofg9vlUbmrqV6Df/
-1maXNFMBAoGBAONpEO2dN+86GilZm3DC5+hrzaGsjs7Ocz0irwVPMRvJz0SUsfbw
-DD9hHkvvwmh07DxxJ45X13m1EHK/pJvN0DXJp5/fUyu17M4nEhLUFqTp1fnJ99QO
-WyEY/dzbyXXZv8nUL4AQV/LEXGAksjcKZflt9J+o0vYpsSt4vyIZMczxAoGBAMMU
-kShcI6rXNGuNFPMHnrmFk1u7weJjjPgBP/xyyq1nG0cuvgmIs5bNTX7H7FTCZyVM
-CT/e/azTVo1Ys4tLZb72EEn1aF16YWyY/5Odbs4ei2HCXQPIYj5w21MrpvAjW7Lo
-VTkMP6PzU3wLcuQlUCi/5teYuc02dQy7C4zOXnDxAoGARrbWH71Ctm4P0ondrwu8
-h2Z2U+7PnXlPFlShrfn5IFX50K6YRFxSwqaVgDF293pcN1NMZJPmGh92lOgI7LXs
-J72kFS+hsjbpAxXdJeOzguZ/tiPan6MzLTCTSElD9RSX8c+8UYtDfecXfoIKtNjT
-6uMJLViW+Rrvz7/FV3oUJVECgYEApyEwt2Yw/IWBGH93KjsmBgVlWNsD4YOuWy8e
-9ZYXA/ZozVRDZYGjcpgTQ4HefENNAQwihIDzziQFa/VJZRZEZhUDoYlJT4SwgMyX
-cY0YSCis+yT8cWg0mxAvJxMn42Y3gpA/qy9OOpUVuhlI5iL9iNvX1m+3BxQXtb9t
-xsVq7dECgYAsRScVDwuYwG/HMUweLqXLKd+xn6lRHcTEWMZ5eWmzmA7qtcrA0CZZ
-CfnWKExPRc1BL7s575xn6Qj3tyVwbB/OGifXsIPwG3uUoqOfpGseHPSbokW85c/8
-cDpQc4L/uHvp/CaS82L5bhFUJ+7J1Tak+h4ZWph680lpKT4MReZu8A==
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-11-148.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Abey1988</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
 -----END RSA PRIVATE KEY-----</param>
-    <param name="color-scheme">white-black</param>
-    <param name="font-size">10</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
   </authorize>
+  
+  <!-- 2 - Abinced - WORKSTATION -->
+  <authorize username="Abinced" password="spAfp1">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-8-111.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Abinced</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-15-248.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Abinced</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  </authorize>
+  
+  <!-- 3 - Ablefte35 - WORKSTATION -->
+  <authorize username="Ablefte35" password="q2oHyU">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-12-197.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Ablefte35</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-14-62.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Ablefte35</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  </authorize>
+  
+  <!-- 4 - Aborest - WORKSTATION -->
+  <authorize username="Aborest" password="o3KF7D">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-14-127.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Aborest</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-15-188.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Aborest</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  </authorize>
+  
+  <!-- 5 - Aboul1937 - WORKSTATION -->
+  <authorize username="Aboul1937" password="lMhMzl">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-3-5.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Aboul1937</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-2-41.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Aboul1937</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  </authorize>
+  
+  <!-- 6 - Abourth - WORKSTATION -->
+  <authorize username="Abourth" password="E7KYZi">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-1-235.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Abourth</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-2-173.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Abourth</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  </authorize>
+  
+  <!-- 7 - Abroves - WORKSTATION -->
+  <authorize username="Abroves" password="lNox0y">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-7-43.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Abroves</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-7-58.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Abroves</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  </authorize>
+  
+  <!-- 8 - Absect - WORKSTATION -->
+  <authorize username="Absect" password="XwZQUn">
+    <!-- WORKSTATION -->
+    <connection name="Workstation">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-13-54.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Absect</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  
+    <!-- CONTROLLER -->
+    <connection name="Controller">
+      <protocol>ssh</protocol>
+      <param name="hostname">ip-192-168-6-246.ec2.internal</param>
+      <param name="port">22</param>
+      <param name="username">Absect</param>
+      <param name="private-key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0LUeMF78aDk0LXUjO+Qvu5nAviO5HVWqIKMrmBcmDLUOx0o5
+XOH6UlCXMSD+DujMV6devU0v+zpB/pYa7n2rUf3weMTixnG2DFFk0/cLgCtYAWeP
+5NYLFC1aRaWiOrLb3um3yteLyn2jXx/V7hRnwuiq28fguOByt9l2gd0cB0SPc8Cr
+MHN/Gh8w/jSz45cGVdcAN9H3BYS9kjvXsUDd+qmMN+PDMOt8J0YhpVN+AtbRoa0F
+F8JJkvp7F6TAVSOVEEF3vqIp2ADJvNOJjvE5Hsaw4YRjiAsJzueAIo/cC9unEOoM
+sU0jcTocKynN/gh+Z7nbathHvb4j8YNO/UuQywIDAQABAoIBAQCV5D5WRyHISK0s
+qKAxd2TAu2AuLsHYS5nv7sB0bsuo/LAseSZRiwqY68BqTGOqmY+ItG/aTQFU0TZs
+fanB9wd/z31RfzXPiANTPXHIufjMiFSgTZyOoRs71oaq1pZ4ydQXeIvDZqLDPxCC
+VP70CjurRCbRye+fV7OMTuZJxl9G566I3hHqUGTtmTbXi5Xjc3DiHJxkkKp30pqX
+GA5MaQ0aVKVVrLLRvK1fywnyhVsHrzAv0DEtFvcTdRsCYlY2ngBR0CPUgOUaZGv7
+DKkaaOKpIM2jHY3bdSJAZfNbFx5d/8PmVDLh2uH4iY5w9/zBJHUJsO8/CVM/QjRD
+y0TkxyjBAoGBAOhmwf4WxWl6NMeANHghNh/0zSylDD96nMrWLxCliDFVvUG+4r9s
+TY9+84LuEFhPLWl1D5f6+DKt/thr2IX7CnAbY55p+8yzJRTp8s5BtS35YysarEhC
+F2SPqLN3ZBnQ+pmqE2cetFHvcVRM9DpWLGmyZ6u4TYjO3aACSty32R5pAoGBAOXm
+cLn6Rh4p8b3Kp64BByJDo2MArTmpP98wTFyt6gIarWsosUFji6H3qeqXamhxXCGV
+D/FyHV6cKlp3bKFAYbozt2taECdCQ4MMqFyVChu2hjrOjNOJ/Mudqgjyu+H3L3Mk
+WjJ+yiO/NBBdwAVjfxtPcym2+h910fEM621gP/cTAoGBAMH1QOJ2zruBKpt1/FRm
+I234OWSROu+fvUvsBcu22zuReyprzYJFOVYRddpIJYwOSLBC6ojFBHAHlzG4kDUB
+l2yI71M+0M++k6wotGQ/op6EDKfk0vRbdHqRCxL9CaYiK4Qj1Z2ymnvngoYA07P8
+R4TPSIaggtUzEPSB9UjQh3xBAoGBAJCJr6eNTNYcAssTBRbluIl3Qtq0izPsT6bP
+Y8ME6FGIWi07+S0mG5yp6578sT6WvpiyccKXvxVDU3FrEdXTd12stA1/Ixa7l1xl
+8de7MA66U2vXfjxkzZVqO4PCsBLh6GgYm8iRZB7TUDVV66q3oisWaU35pwludp55
+Q+6RC8YXAoGAPFfTdS77xKn/yv7SWBwnctBDZYR++tpOB/62X/x2GyhY0n7wVQ7k
+gZx8pNkPIS8mRtLfZkrZhH1lmR8MrlP0eDwCPUwGmMyb28zHF6fJThWnOCiJ3uAI
++i0qZ+/SMoDmiFDA9lZQeQxLLmJG64qA9tOO3R5X6vxGM9meUexCobg=
+-----END RSA PRIVATE KEY-----</param>
+      <param name="color-scheme">white-black</param>
+      <param name="font-size">10</param>
+    </connection>
+  </authorize>
+  
 </user-mapping>

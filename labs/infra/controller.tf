@@ -4,15 +4,15 @@
 
 resource "aws_instance" "controller" {
   count         = "${var.workstation_count}"
-  ami           = "ami-a4dc46db"
+  ami           = "ami-02a9d865396dce6d4"  #"ami-a4dc46db"
   instance_type = "t2.micro"
   key_name      = "${var.aws_ssh_key_name}"
-  depends_on    = ["null_resource.user_mapping_start"]
+  depends_on    = ["null_resource.ssh_key"]
 
   associate_public_ip_address = true
 
   subnet_id                   = "${aws_subnet.default.id}"
-  vpc_security_group_ids      = [ "${element(aws_security_group.controller.*.id, count.index)}" ]
+  vpc_security_group_ids      = [ "${element(aws_security_group.workstation.*.id, count.index)}" ]
 
   root_block_device {
     volume_type = "gp2"
@@ -24,52 +24,6 @@ resource "aws_instance" "controller" {
     user        = "ubuntu"
     private_key = "${file(var.aws_ssh_key_file)}"
   }
-
-  # add user to user-mapping.xml for guacamole
-//  provisioner "local-exec" {
-//    command = <<EOF
-//    user_id=${count.index}
-//    user_name=${element(keys(data.external.user_list.result), count.index)}
-//    user_password=${element(random_string.password.*.result, count.index)}
-//    #'${element(values(data.external.user_list.result), count.index)}'
-//    user_host=${self.private_dns}
-//
-//    # Add a user-mapping record
-//    cat >>${var.user_mapping_file}<<EOU
-//      <!-- $user_id - $user_name - $user_host - CONTROLLER -->
-//      <authorize username="$user_name" password="$user_password">
-//        <protocol>ssh</protocol>
-//        <param name="hostname">$user_host</param>
-//        <param name="port">22</param>
-//        <param name="username">$user_name</param>
-//        <param name="private-key">$(cat ssh/ssh_key)</param>
-//        <param name="color-scheme">white-black</param>
-//        <param name="font-size">10</param>
-//      </authorize>
-//    EOU
-//
-//    # Add a user-mapping record
-//    cat >>${var.user_url_mapping_file}<<EOU
-//    # $user_id - $user_name - $user_host - CONTROLLER
-//    location /$user_name {
-//      proxy_pass http://$user_host:80/;
-//      proxy_set_header Host \$host;
-//      proxy_set_header X-Real-IP \$remote_addr;
-//
-//      if (\$remote_user != "$user_name") {
-//        return 403;
-//      }
-//
-//      auth_basic           "Dashboard access";
-//      auth_basic_user_file /etc/nginx/.htpasswd;
-//    }
-//
-//    EOU
-//
-//    # Add a user-list csv record
-//    # echo "$user_name,$user_password,$user_host" >> ${var.user_list_file_result}
-//    EOF
-//  }
 
   # upload public key to workstation
   provisioner "file" {
@@ -99,7 +53,8 @@ resource "aws_instance" "controller" {
     local.common_tags,
     map(
       "Name", "${local.instance_name_runtime}-${count.index + 1}-controller",
-      "user", "${element(keys(data.external.user_list.result), count.index)}"
+      "user", "${element(keys(data.external.user_list.result), count.index)}",
+      "ssh_key_id", "${null_resource.ssh_key.id}"
     )
   )}"
 }

@@ -51,6 +51,15 @@ install_docker() {
   sudo apt-get install -y docker-ce
 }
 
+generate_ssh_cert() {
+  log "Generating SSL cert..."
+  mkdir -p /etc/ssl/certs
+  pushd /etc/ssl/certs
+    sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx-selfsigned.key -out nginx-selfsigned.crt -subj "/C=US/ST=SomeState/L=SomeCity/O=Labs/CN=rubuscloud.com"
+    sudo openssl dhparam -out dhparam.pem 1024
+  popd
+}
+
 # main
 log " *** Starting jumpbox... ***"
 cd $SCRIPT_DIR
@@ -58,6 +67,10 @@ cd $SCRIPT_DIR
 ## install dependencies
 install_docker
   verify_exitcode 'install_docker'
+
+## generate certs for nginx
+generate_ssh_cert
+  verify_exitcode 'generate_ssh_cert'
 
 ## run
 sudo docker swarm init

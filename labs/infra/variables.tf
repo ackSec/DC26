@@ -52,9 +52,9 @@ variable "user_mapping_file" {
   default = "users/user-mapping.xml"
 }
 
-variable "user_url_mapping_file" {
-  description = "user_url_mapping.conf file name"
-  default = "users/user_url_mapping.conf"
+variable "user_htpasswd_file" {
+  description = ".htpasswords file name used for basic authentication on Nginx"
+  default = "users/.htpasswd"
 }
 
 variable "user_list_file" {

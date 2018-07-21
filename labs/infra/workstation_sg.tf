@@ -11,12 +11,18 @@ resource "aws_security_group" "workstation" {
 
   # Allow HTTP from guacamole server
   ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    security_groups = [ "${aws_security_group.jumpbox.id}" ]
+  }
+
+  # Allow SSH from guacamole server
+  ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
     security_groups = [ "${aws_security_group.jumpbox.id}" ]
-    # DEBUG
-    # cidr_blocks = [ "0.0.0.0/0" ] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
   }
 
   # SSH Access for provisioning machine
@@ -25,6 +31,14 @@ resource "aws_security_group" "workstation" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = [ "${data.external.my_ip.result.ip}/32" ]
+  }
+
+  # Allow ALL with self
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    self        = true
   }
 
   # Allow ALL outbound

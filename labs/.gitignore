@@ -1,6 +1,7 @@
 .terraform*
 zz_bak
-terraform.tfstate*
+*.tfstate*
 infra/ssh/*
 user-list-result.csv
 user-mapping.xml
+.htpasswd

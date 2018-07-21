@@ -1,21 +1,10 @@
 #
-# instance.tf
+# Controller
 #
 
-# Generate a new SSH key for guacamole access
-resource "null_resource" "ssh_key" {
-  provisioner "local-exec" {
-    command = <<EOF
-mkdir -p ssh
-rm -rf ssh/*
-ssh-keygen -t rsa -b 2048 -P '' -f ssh/ssh_key -C 'user@example.com'
-EOF
-  }
-}
-
-resource "aws_instance" "workstation" {
+resource "aws_instance" "controller" {
   count         = "${var.workstation_count}"
-  ami           = "ami-a4dc46db"
+  ami           = "ami-02a9d865396dce6d4"  #"ami-a4dc46db"
   instance_type = "t2.micro"
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.ssh_key"]
@@ -55,7 +44,7 @@ resource "aws_instance" "workstation" {
   volume_tags = "${merge(
     local.common_tags,
     map(
-      "Name", "${local.instance_name_runtime}-${count.index + 1}-volume",
+      "Name", "${local.instance_name_runtime}-${count.index + 1}-controller-volume",
       "user", "${element(keys(data.external.user_list.result), count.index)}"
     )
   )}"
@@ -63,7 +52,7 @@ resource "aws_instance" "workstation" {
   tags = "${merge(
     local.common_tags,
     map(
-      "Name", "${local.instance_name_runtime}-${count.index + 1}",
+      "Name", "${local.instance_name_runtime}-${count.index + 1}-controller",
       "user", "${element(keys(data.external.user_list.result), count.index)}",
       "ssh_key_id", "${null_resource.ssh_key.id}"
     )

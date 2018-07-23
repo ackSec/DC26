@@ -4,7 +4,7 @@
 
 resource "aws_instance" "controller" {
   count         = "${var.workstation_count}"
-  ami           = "ami-75e1e00a"  #"ami-a4dc46db"
+  ami           = "ami-10b2b16f"  #"ami-a4dc46db"
   instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.ssh_key"]

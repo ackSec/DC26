@@ -4,7 +4,7 @@
 
 resource "aws_instance" "jumpbox" {
   ami           = "ami-a4dc46db"
-  instance_type = "t2.large" #t2.micro / t2.large / t2.xlarge
+  instance_type = "t2.xlarge" #t2.micro / t2.large / t2.xlarge
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.user_mapping"]
 

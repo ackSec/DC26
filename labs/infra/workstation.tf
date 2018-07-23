@@ -15,8 +15,8 @@ EOF
 
 resource "aws_instance" "workstation" {
   count         = "${var.workstation_count}"
-  ami           = "ami-a4dc46db"
-  instance_type = "t2.micro"
+  ami           = "ami-2ce0e153"
+  instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.ssh_key"]
 

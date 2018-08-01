@@ -37,10 +37,28 @@ resource "aws_instance" "controller" {
       "sudo useradd -m -s /bin/bash -p $(echo \"${element(random_string.password.*.result, count.index)}\" | openssl passwd -1 -stdin) ${element(keys(data.external.user_list.result), count.index)}",
       "sudo usermod -aG sudo ${element(keys(data.external.user_list.result), count.index)}",
       "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'ls -la /home; mkdir -p $HOME/.ssh; echo \"$(cat /tmp/ssh_key.pub)\" >> $HOME/.ssh/authorized_keys'",
+      "cd /home/${element(keys(data.external.user_list.result), count.index)}",
+      "sudo apt-get install -y git build-essential ant maven python-dev",
+      "sudo git clone git://github.com/floodlight/floodlight.git",
+      "cd floodlight",
+      "sudo git submodule init",
+      "sudo git submodule update",
+      "sudo ant",
+      "sudo git clone git://github.com/floodlight/floodlight-webui",
+      "nohup java -jar target/floodlight.jar &",
       "sudo rm /tmp/ssh_key.pub"
     ]
   }
-
+/*
+  provisioner "remote-exec" {
+    inline = [
+      "sudo useradd -m -s /bin/bash -p $(echo \"${element(random_string.password.*.result, count.index)}\" | openssl passwd -1 -stdin) ${element(keys(data.external.user_list.result), count.index)}",
+      "sudo usermod -aG sudo ${element(keys(data.external.user_list.result), count.index)}",
+      "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'ls -la /home; mkdir -p $HOME/.ssh; echo \"$(cat /tmp/ssh_key.pub)\" >> $HOME/.ssh/authorized_keys'",
+      "sudo rm /tmp/ssh_key.pub"
+    ]
+  }
+*/
   volume_tags = "${merge(
     local.common_tags,
     map(

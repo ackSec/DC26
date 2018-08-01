@@ -66,3 +66,12 @@ variable "user_list_file_result" {
   description = "List of active users"
   default = "users/user-list-result.csv"
 }
+
+variable "zoneID"{
+    type = "map"
+    description = "Route53 Zone ID"
+    default = {
+    private = "Z3MXGP9U26FV33",
+    public = "Z2XAVPOFOKQ5WF"
+    }
+}

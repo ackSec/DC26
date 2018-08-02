@@ -37,7 +37,7 @@ variable "environment" {
 
 variable "lab_name" {
   description = "Lab name"
-  default = "testlab01"
+  default = "dc26"
 }
 
 ## instance configuration

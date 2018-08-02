@@ -39,7 +39,7 @@ resource "aws_instance" "controller" {
       "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'ls -la /home; mkdir -p $HOME/.ssh; echo \"$(cat /tmp/ssh_key.pub)\" >> $HOME/.ssh/authorized_keys'",
       "cd /home/${element(keys(data.external.user_list.result), count.index)}",
       "sudo apt-get install -y git build-essential ant maven python-dev",
-      "sudo git clone git://github.com/floodlight/floodlight.git",
+      "sudo git clone https://github.com/ackSec/floodlight.git",
       "cd floodlight",
       "sudo git submodule init",
       "sudo git submodule update",

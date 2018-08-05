@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export DOCKER_REPO_KEY_FINGERPRINT='9DC858229FC7DD38854AE2D88D81803C0EBFCD88'
+export LOG_FILE='/var/log/workstation.log'
 # Redirect stdout ( > ) into a named pipe ( >() ) running "tee"
 >$LOG_FILE
 exec >  >(sudo tee -ia $LOG_FILE)

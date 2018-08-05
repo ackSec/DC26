@@ -72,4 +72,7 @@ install_docker
 add_images
   verify_exitcode 'add_images'
 
+start_images
+  verify_exitcode 'start_images'
+  
 log " *** Workstation started ***"

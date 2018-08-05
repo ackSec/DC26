@@ -23,6 +23,7 @@ verify_exitcode() {
 install_docker() {
   log "Installing docker..."
   sudo apt-get update
+  sudo apt-get upgrade
   sudo apt-get install -y \
       apt-transport-https \
       ca-certificates \

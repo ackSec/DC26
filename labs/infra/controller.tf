@@ -44,7 +44,7 @@ resource "aws_instance" "controller" {
       "sudo git submodule init",
       "sudo git submodule update",
       "sudo ant",
-      "sudo git clone git://github.com/floodlight/floodlight-webui",
+      "sudo git clone https://github.com/ackSec/floodlight-webui.git",
       "nohup java -jar target/floodlight.jar &",
       "sudo rm /tmp/ssh_key.pub"
     ]

@@ -51,7 +51,8 @@ add_images(){
   log "Adding images..."
   sudo service docker start
   sudo docker pull acksec/snort:latest
-  sudo docker pull alpine
+  sudo docker pull acksec/dc26:latest
+  sudo docker pull acksec/honeynet:latest
 
 }
 
@@ -59,7 +60,7 @@ start_images(){
   log "Starting images..."
   sudo docker run -w /root -itd -e CONTROLLER_IP=$CONTROLLER_IP --name attacker acksec/dc26
   sudo docker run -w /opt -itd -e CONTROLLER_IP=$CONTROLLER_IP --name victim acksec/snort
-  sudo docker run -w /root -itd -e CONTROLLER_IP=$CONTROLLER_IP --name honeynet alpine
+  sudo docker run -itd -e CONTROLLER_IP=$CONTROLLER_IP --name honeynet acksec/honeynet
 }
 
 # main

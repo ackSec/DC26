@@ -8,7 +8,7 @@ resource "aws_route53_zone" "default" {
 
 resource "aws_route53_record" "instance" {
   count   = "${var.workstation_count}"
-  zone_id = "${aws_route53_zone.default.id}"
+  zone_id = "${var.zoneID["private"]}"
   name    = "${element(keys(data.external.user_list.result), count.index)}-controller"
   type    = "CNAME"
   ttl     = "30"

@@ -51,13 +51,15 @@ add_images(){
   log "Adding images..."
   sudo service docker start
   sudo docker pull acksec/snort:latest
-  sudo docker pull acksec/dc26:latest
+  sudo docker pull alpine
+
 }
 
 start_images(){
   log "Starting images..."
   sudo docker run -w /root -itd -e CONTROLLER_IP=$CONTROLLER_IP --name attacker acksec/dc26
   sudo docker run -w /opt -itd -e CONTROLLER_IP=$CONTROLLER_IP --name victim acksec/snort
+  sudo docker run -w /root -itd -e CONTROLLER_IP=$CONTROLLER_IP --name honeynet alpine
 }
 
 # main
@@ -74,5 +76,5 @@ add_images
 
 start_images
   verify_exitcode 'start_images'
-  
+
 log " *** Workstation started ***"

@@ -16,11 +16,11 @@ EOF
 
 resource "aws_instance" "workstation" {
   count         = "${var.workstation_count}"
-  ami           = "ami-ee8c9391" #"ami-93c3d2ec"
+  ami           = "ami-ee8c9391" 
+  #ami           = "ami-93c3d2ec"
   instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.ssh_key"]
-  depends_on    = ["null_resource.env_vars"]
 
   associate_public_ip_address = true
 
@@ -45,17 +45,20 @@ resource "aws_instance" "workstation" {
     destination = "/tmp/ssh_key.pub"
   }
 
+  provisioner "file" {
+    source      = "../workstation/workstation.sh"
+    destination = "/tmp/workstation.sh"
+  }
+
   provisioner "remote-exec" {
     inline = [
       "sudo useradd -m -s /bin/bash -p $(echo \"${element(random_string.password.*.result, count.index)}\" | openssl passwd -1 -stdin) ${element(keys(data.external.user_list.result), count.index)}",
       "sudo usermod -aG sudo ${element(keys(data.external.user_list.result), count.index)}",
       "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'ls -la /home; mkdir -p $HOME/.ssh; echo \"$(cat /tmp/ssh_key.pub)\" >> $HOME/.ssh/authorized_keys'",
-      "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c export CONTROLLER_IP='${element(aws_instance.controller.*.private_ip, count.index)}'",
       "sudo mkdir -p /etc/workstation",
       "sudo /bin/bash -c 'echo CONTROLLER_IP=${element(aws_instance.controller.*.private_ip, count.index)} > /etc/workstation/workstation.env'",
+      "sudo bash /tmp/workstation.sh",
       "cd /home/${element(keys(data.external.user_list.result), count.index)}",
-      "sudo git clone https://github.com/ackSec/DC26.git",
-      "sudo /bin/bash -c DC26/labs/workstation/workstation.sh",
       "sudo rm /tmp/ssh_key.pub"
     ]
   }
@@ -63,7 +66,7 @@ resource "aws_instance" "workstation" {
   # create workstation user and add keys
 
 # "sudo export CONTROLLER_IP='${element(aws_instance.controller.*.private_ip, count.index)}'",
-
+#"sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c export CONTROLLER_IP='${element(aws_instance.controller.*.private_ip, count.index)}'",
 /*
   provisioner "remote-exec" {
     inline = [

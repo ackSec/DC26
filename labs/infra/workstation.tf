@@ -50,8 +50,11 @@ resource "aws_instance" "workstation" {
       "sudo useradd -m -s /bin/bash -p $(echo \"${element(random_string.password.*.result, count.index)}\" | openssl passwd -1 -stdin) ${element(keys(data.external.user_list.result), count.index)}",
       "sudo usermod -aG sudo ${element(keys(data.external.user_list.result), count.index)}",
       "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'ls -la /home; mkdir -p $HOME/.ssh; echo \"$(cat /tmp/ssh_key.pub)\" >> $HOME/.ssh/authorized_keys'",
+      "sudo /bin/bash -c 'echo CONTROLLER_IP=${element(aws_instance.controller.*.private_ip, count.index)} > /etc/workstation/workstation.env'",
+      "sudo export CONTROLLER_IP='${element(aws_instance.controller.*.private_ip, count.index)}'",
       "cd /home/${element(keys(data.external.user_list.result), count.index)}",
       "sudo git clone https://github.com/ackSec/DC26.git",
+      "sudo ./DC26/labs/workstation/workstation.sh",
       "sudo rm /tmp/ssh_key.pub"
     ]
   }

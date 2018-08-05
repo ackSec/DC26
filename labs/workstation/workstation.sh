@@ -52,14 +52,22 @@ add_images(){
   sudo docker pull acksec/dc26:latest
 }
 
+start_images(){
+  log "Starting images..."
+  sudo docker run -w /root/ -itd -e CONTROLLER_IP=$CONTROLLER_IP --name attacher acksec/dc26
+  sudo docker run -w /opt/ -itd -e CONTROLLER_IP=$CONTROLLER_IP --name victim acksec/snort
+}
+
 # main
 log " *** Installing Docker on Workstation... ***"
 
 ## install dependencies
+log " *** Pulling Images ***"
 install_docker
   verify_exitcode 'install_docker'
 
 ## run
-
+add_images
+  verify_exitcode 'add_images'
 
 log " *** Workstation started ***"

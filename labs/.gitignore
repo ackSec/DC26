@@ -5,3 +5,4 @@ infra/ssh/*
 user-list-result.csv
 user-mapping.xml
 .htpasswd
+jumpbox/nginx/html/index.html

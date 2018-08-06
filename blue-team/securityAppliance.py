@@ -107,7 +107,7 @@ def main():
         #SW2
         #traffic flow from victim host (10.0.0.2) to attacker host (10.0.0.1)
 
-        flow1 {
+        flow1 = {
             'switch':"00:00:00:00:00:00:00:02",
             "name":"flow_mod_1",
             "cookie":"0",

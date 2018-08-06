@@ -27,6 +27,9 @@ class StaticEntryPusher(object):
         ret = self.rest_call(data, 'DELETE')
         return ret[0] == 200
 
+    def str_to_class(str):
+        return getattr(sys.modules[__name__], str)
+
     def rest_call(self, data, action):
         path = '/wm/staticentrypusher/json'
         headers = {
@@ -44,7 +47,7 @@ class StaticEntryPusher(object):
 
 net = Containernet(controller=RemoteController)
 controllerIP = repr(os.environ.get('CONTROLLER_IP'))
-controllerIPTest=os.environ.get('CONTROLLER_IP')
+controllerIPTest=str_to_class(controllerIP)
 pusher = StaticEntryPusher('controllerIPTest')
 
 flow1 = {

@@ -44,7 +44,7 @@ class StaticEntryPusher(object):
 
 net = Containernet(controller=RemoteController)
 controllerIP = repr(os.environ.get('CONTROLLER_IP'))
-pusher = StaticEntryPusher('controllerIP')
+pusher = StaticEntryPusher(controllerIP)
 
 flow1 = {
     'switch':"00:00:00:00:00:00:00:01",

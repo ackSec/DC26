@@ -68,7 +68,7 @@ class StaticFlowPusher(object):
 signal.signal(signal.SIGINT, handler)
 
 
-pusher = StaticFlowPusher('<insert_controller_ip')
+pusher = StaticFlowPusher('controllerIP')
 
 
 

@@ -128,7 +128,7 @@ def main():
         print("Flow 1 Sent")
         # traffic flow from attacker host (10.0.0.1) to victim host (10.0.0.2)
         flow2 = {
-            'switch':"00:00:00:00:00:00:00:02,
+            'switch':"00:00:00:00:00:00:00:02",
             "name":"flow_mod_2",
             "cookie":"0",
             "table_id": "0",

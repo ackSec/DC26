@@ -47,7 +47,7 @@ controllerIP = repr(os.environ.get('CONTROLLER_IP'))
 pusher = StaticEntryPusher('controllerIP')
 
 flow1 = {
-    'switch':"00:00:00:00:00:00:00:01,
+    'switch':"00:00:00:00:00:00:00:01",
     "name":"flow_mod_1",
     "cookie":"0",
     "table_id": "0",

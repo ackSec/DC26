@@ -4,12 +4,12 @@
 #
 
 resource "aws_vpc" "default" {
-  cidr_block            = "192.168.0.0/16"
-  enable_dns_support    = true
-  enable_dns_hostnames  = true
+  cidr_block           = "192.168.0.0/16"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
 
   tags = {
-    Name = "${var.environment}-vpc"
+    Name        = "${var.environment}-vpc"
     environment = "${var.environment}"
   }
 }
@@ -20,7 +20,7 @@ resource "aws_subnet" "default" {
   availability_zone = "us-east-1a"
 
   tags = {
-    Name = "${var.environment}-subnet"
+    Name        = "${var.environment}-subnet"
     environment = "${var.environment}"
   }
 }
@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "default" {
   vpc_id = "${aws_vpc.default.id}"
 
   tags = {
-    Name = "${var.environment}-gateway"
+    Name        = "${var.environment}-gateway"
     environment = "${var.environment}"
   }
 }
@@ -39,9 +39,9 @@ data "aws_route_table" "default" {
 }
 
 resource "aws_route" "default" {
-  route_table_id            = "${data.aws_route_table.default.id}"
-  destination_cidr_block    = "0.0.0.0/0"
-  gateway_id                = "${aws_internet_gateway.default.id}"
+  route_table_id         = "${data.aws_route_table.default.id}"
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = "${aws_internet_gateway.default.id}"
 }
 
 # used to peer with AWS S3
@@ -50,3 +50,4 @@ resource "aws_route" "default" {
 //  service_name    = "com.amazonaws.${var.aws_region}.s3"
 //  route_table_ids = ["${data.aws_route_table.default.id}"]
 //}
+

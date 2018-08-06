@@ -4,18 +4,18 @@
 
 resource "aws_instance" "controller" {
   count         = "${var.workstation_count}"
-  ami           = "ami-10b2b16f"  #"ami-a4dc46db"
+  ami           = "ami-10b2b16f"             #"ami-a4dc46db"
   instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.ssh_key"]
 
   associate_public_ip_address = true
 
-  subnet_id                   = "${aws_subnet.default.id}"
-  vpc_security_group_ids      = [ "${element(aws_security_group.workstation.*.id, count.index)}" ]
+  subnet_id              = "${aws_subnet.default.id}"
+  vpc_security_group_ids = ["${element(aws_security_group.workstation.*.id, count.index)}"]
 
   root_block_device {
-    volume_type = "gp2"
+    volume_type           = "gp2"
     delete_on_termination = true
   }
 
@@ -46,10 +46,10 @@ resource "aws_instance" "controller" {
       "sudo ant",
       "sudo git clone https://github.com/ackSec/floodlight-webui.git",
       "nohup java -jar target/floodlight.jar &",
-      "sudo rm /tmp/ssh_key.pub"
+      "sudo rm /tmp/ssh_key.pub",
     ]
   }
-  
+
   volume_tags = "${merge(
     local.common_tags,
     map(

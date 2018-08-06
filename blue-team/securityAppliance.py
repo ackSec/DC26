@@ -1,7 +1,19 @@
 #!/usr/bin/env/python
+
+###############################
+# This is a very static proof of concept
+# of how a SDN can dynamically respond to an attack.
+# This pushes predefined flows to predefined switches, but with some tweaking
+# this can detect threats on the network and dynamically create flows to respond
+#
+#
+###############################
+
 import httplib
 import json
 import signal
+import os
+import sys
 from snortunsock import snort_listener
 
 class StaticFlowPusher(object):
@@ -81,62 +93,3 @@ for msg in snort_listener.start_recv("/tmp/snort_alert"):
     pusher.set(flow2)
     print("Flow 2 Generated")
     print("Flow 2 Sent")
-
-
-'''
-    ####Flow 1####
-    match = Match(eth_type="ipv4", in_port=1, ipv4_src="10.0.0.2", ipv4_dst="10.0.0.1")
-    action = Action(output=23)
-    flow = Flow(priority=30000, match=match, actions=action, hard_timeout=30)
-    print(flow)
-    print("Flow 1 Generated")
-    api.add_flows("00:00:00:50:56:a6:3a:80", flow)
-    print("Flow 1 Sent")
-
-    ####Flow 2####
-    match = Match(eth_type="ipv4", in_port=23, ipv4_src="10.0.0.1", ipv4_dst="10.0.0.2")
-    action = Action(output=1)
-    flow = Flow(priority=30000, match=match, actions=action, hard_timeout=30)
-    print(flow)
-    print("Flow 2 Generated")
-    api.add_flows("00:00:00:50:56:a6:3a:80", flow)
-    print("Flow 2 Sent")
-
-    ####Flow 3####
-    match = Match(eth_type="ipv4", in_port=24, ipv4_src="10.0.0.1", ipv4_dst="10.0.0.2")
-    flow = Flow(priority=30000, match=match, hard_timeout=30)
-    print(flow)
-    print("Flow 3 Generated")
-    api.add_flows("00:00:00:50:56:a6:3a:80", flow)
-    print("Flow 3 Sent")
-
-    ####Honeynet Flow 1####
-    match = Match(eth_type="ipv4", in_port=1, ipv4_src="10.0.0.1", ipv4_dst="10.0.0.2")
-    action = Action(output=23)
-    flow = Flow(priority=30000, match=match, actions=action, hard_timeout=30)
-    print(flow)
-    print("Honeynet 1 Generated")
-    api.add_flows("00:00:00:50:56:a6:3a:80", flow)
-    print("Honeynet 1 Sent")
-
-    ####Honeynet Flow 2####
-    match = Match(eth_type="ipv4", in_port=23, ipv4_src="10.0.0.2", ipv4_dst="10.0.0.1")
-    action = Action(output=1)
-    flow = Flow(priority=30000, match=match, actions=action, hard_timeout=30)
-    print(flow)
-    print("Honeynet 2 Generated")
-    api.add_flows("00:00:00:50:56:a6:3a:80", flow)
-    print("Honeynet 2 Sent")
-
-    ####Honeynet Flow 3####
-    match = Match(eth_type="ipv4", in_port=24, ipv4_src="10.0.0.2")
-    flow = Flow(priority=30000, match=match, hard_timeout=30)
-    print(flow)
-    print("Honeynet 2 Generated")
-    api.add_flows("00:00:00:50:56:a6:3a:80", flow)
-    print("Honeynet 2 Sent")
-
-    break
-else:
-    break
-'''

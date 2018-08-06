@@ -1,6 +1,6 @@
 resource "aws_route53_zone" "default" {
-  name = "${local.hosted_zone_name}"
-  vpc_id = "${aws_vpc.default.id}"
+  name          = "${local.hosted_zone_name}"
+  vpc_id        = "${aws_vpc.default.id}"
   force_destroy = true
 
   tags = "${local.common_tags}"

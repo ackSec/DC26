@@ -13,7 +13,7 @@ resource "aws_security_group" "jumpbox" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = [ "0.0.0.0/0" ] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
+    cidr_blocks = ["0.0.0.0/0"] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
   }
 
   # Allow HTTPS (nginx proxy)
@@ -21,7 +21,7 @@ resource "aws_security_group" "jumpbox" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [ "0.0.0.0/0" ] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
+    cidr_blocks = ["0.0.0.0/0"] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
   }
 
   # Allow HTTP (nginx controller proxy)
@@ -29,7 +29,7 @@ resource "aws_security_group" "jumpbox" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = [ "0.0.0.0/0" ] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
+    cidr_blocks = ["0.0.0.0/0"] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
   }
 
   # SSH Access for provisioning machine
@@ -37,15 +37,15 @@ resource "aws_security_group" "jumpbox" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [ "${data.external.my_ip.result.ip}/32" ] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
+    cidr_blocks = ["${data.external.my_ip.result.ip}/32"] # debug: "0.0.0.0/0" "${var.vpc_cidr}"
   }
 
   # Allow ALL outbound
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = [ "0.0.0.0/0" ]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = {

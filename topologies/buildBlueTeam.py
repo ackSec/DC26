@@ -9,7 +9,7 @@ from mininet.log import info, setLogLevel
 setLogLevel('info')
 
 net = Containernet(controller=RemoteController)
-controllerIP = os.getenv('CONTROLLER_IP')
+controllerIP = repr(os.getenv('CONTROLLER_IP'))
 
 
 info('*** Adding controller at' + controllerIP + '\n')

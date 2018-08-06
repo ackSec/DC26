@@ -21,16 +21,6 @@ verify_exitcode() {
   fi
 }
 
-install_containernet() {
-  sudo apt-get update
-  sudo apt-get upgrade -y
-  sudo apt-get install -y ansible git aptitude
-  git clone https://github.com/ackSec/containernet.git
-  cd containernet/ansible
-  sudo ansible-playbook -i "localhost," -c local install.yml
-
-
-}
 
 install_docker() {
   log "Installing docker..."

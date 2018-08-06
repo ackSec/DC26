@@ -21,10 +21,19 @@ verify_exitcode() {
   fi
 }
 
-install_docker() {
-  log "Installing docker..."
+install_containernet() {
   sudo apt-get update
   sudo apt-get upgrade -y
+  sudo apt-get install -y ansible git aptitude
+  git clone https://github.com/ackSec/containernet.git
+  cd containernet/ansible
+  sudo ansible-playbook -i "localhost," -c local install.yml
+
+
+}
+
+install_docker() {
+  log "Installing docker..."
   sudo apt-get install -y \
       apt-transport-https \
       ca-certificates \
@@ -64,14 +73,12 @@ add_images(){
 #}
 
 # main
-log " *** Installing Docker on Workstation... ***"
 
-## install dependencies
-log " *** Pulling Images ***"
+log " *** Installing Docker on Workstation... ***"
 install_docker
   verify_exitcode 'install_docker'
 
-## run
+log " *** Pulling Images ***"
 add_images
   verify_exitcode 'add_images'
 

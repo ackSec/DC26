@@ -13,7 +13,7 @@ controllerIP = os.getenv('CONTROLLER_IP')
 
 
 info('*** Adding controller\n')
-net.addController( 'c0', controller=RemoteController, ip=controllerIP, port=6653 )
+net.addController( 'c0', controller=RemoteController, ip='controllerIP', port=6653 )
 info('*** Adding docker containers\n')
 
 d1 = net.addDocker('d1', ip='10.0.0.1', dimage="acksec/dc26", environment={"CONTROLLER_IP": "controllerIP"})

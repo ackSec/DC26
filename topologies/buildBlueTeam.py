@@ -45,12 +45,10 @@ class StaticEntryPusher(object):
         print ret
         conn.close()
         return ret
-def str_to_class(str):
-    return getattr(sys.modules[__name__], str)
+
 net = Containernet(controller=RemoteController)
 controllerIP = repr(os.environ.get('CONTROLLER_IP'))
-controllerIPTest=str_to_class('controllerIP')
-pusher = StaticEntryPusher('controllerIPTest')
+pusher = StaticEntryPusher('controllerIP')
 
 flow1 = {
     'switch':"00:00:00:00:00:00:00:01",
@@ -191,8 +189,8 @@ net.addLink(h3, s3, port1=1, port2=1)
 
 info('*** Starting network\n')
 net.start()
-info('*** Testing connectivity\n')
-net.ping([h1, h2])
+#info('*** Testing connectivity\n')
+#net.ping([h1, h2])
 info('*** Pushing flows\n')
 pusher.set(flow1)
 pusher.set(flow2)

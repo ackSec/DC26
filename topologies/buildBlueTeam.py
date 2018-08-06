@@ -18,9 +18,9 @@ net.addController( 'c0', controller=RemoteController, ip='controllerIP', port=66
 
 info('*** Adding docker containers\n')
 
-d1 = net.addDocker('d1', ip='10.0.0.1', dimage="acksec/dc26", environment={"CONTROLLER_IP": "controllerIP"})
-d2 = net.addDocker('d2', ip='10.0.0.2', dimage="acksec/snort", environment={"CONTROLLER_IP": "controllerIP"})
-d3 = net.addDocker('d3', ip='10.0.0.10', dimage="acksec/honeynet", environment={"CONTROLLER_IP": "controllerIP"})
+d1 = net.addDocker('d1', ip='10.0.0.1', dimage="acksec/dc26", environment={"CONTROLLER_IP": "controllerIP"}, name='attacker', working_dir="/root")
+d2 = net.addDocker('d2', ip='10.0.0.2', dimage="acksec/snort", environment={"CONTROLLER_IP": "controllerIP"}, name='victim', working_dir="/opt")
+d3 = net.addDocker('d3', ip='10.0.0.10', dimage="acksec/honeynet", environment={"CONTROLLER_IP": "controllerIP"}, name='honeynet')
 #d2 = net.addDocker('d2', ip='10.0.0.2', dimage="acksec/dc26")
 #d3 = net.addDocker('d2', ip='10.0.0.2', did='8ef9aa514cf0')
 

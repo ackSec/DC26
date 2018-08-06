@@ -16,7 +16,7 @@ EOF
 
 resource "aws_instance" "workstation" {
   count         = "${var.workstation_count}"
-  ami           = "ami-ee8c9391" 
+  ami           = "ami-ee8c9391"
   #ami           = "ami-93c3d2ec"
   instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
@@ -63,27 +63,6 @@ resource "aws_instance" "workstation" {
     ]
   }
 
-  # create workstation user and add keys
-
-# "sudo export CONTROLLER_IP='${element(aws_instance.controller.*.private_ip, count.index)}'",
-#"sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c export CONTROLLER_IP='${element(aws_instance.controller.*.private_ip, count.index)}'",
-/*
-  provisioner "remote-exec" {
-    inline = [
-      "sudo useradd -m -s /bin/bash -p $(echo \"${element(random_string.password.*.result, count.index)}\" | openssl passwd -1 -stdin) ${element(keys(data.external.user_list.result), count.index)}",
-      "sudo usermod -aG sudo ${element(keys(data.external.user_list.result), count.index)}",
-      "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'ls -la /home; mkdir -p $HOME/.ssh; echo \"$(cat /tmp/ssh_key.pub)\" >> $HOME/.ssh/authorized_keys'",
-      "cd /home/${element(keys(data.external.user_list.result), count.index)}",
-      "sudo git clone https://github.com/ackSec/DC26.git",
-      "sudo git clone https://github.com/ackSec/containernet.git",
-      "sudo chown ${element(keys(data.external.user_list.result), count.index)}:${element(keys(data.external.user_list.result), count.index)} /home/${element(keys(data.external.user_list.result), count.index)} -R",
-      "cd containernet/ansible",
-      "sudo ansible-playbook -i \"localhost,\" -c local install.yml",
-      "sudo rm /tmp/ssh_key.pub"
-
-    ]
-  }
-*/
   volume_tags = "${merge(
     local.common_tags,
     map(

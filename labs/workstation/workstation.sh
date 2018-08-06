@@ -56,12 +56,12 @@ add_images(){
 
 }
 
-start_images(){
-  log "Starting images..."
-  sudo docker run -w /root -itd -e CONTROLLER_IP=$CONTROLLER_IP --name attacker acksec/dc26
-  sudo docker run -w /opt -itd -e CONTROLLER_IP=$CONTROLLER_IP --name victim acksec/snort
-  sudo docker run -itd -e CONTROLLER_IP=$CONTROLLER_IP --name honeynet acksec/honeynet
-}
+#start_images(){
+#  log "Starting images..."
+#  sudo docker run -w /root -itd -e CONTROLLER_IP=$CONTROLLER_IP --name attacker acksec/dc26
+#  sudo docker run -w /opt -itd -e CONTROLLER_IP=$CONTROLLER_IP --name victim acksec/snort
+#  sudo docker run -itd -e CONTROLLER_IP=$CONTROLLER_IP --name honeynet acksec/honeynet
+#}
 
 # main
 log " *** Installing Docker on Workstation... ***"

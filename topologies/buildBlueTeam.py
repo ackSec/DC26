@@ -171,9 +171,9 @@ h3 = net.addDocker('honeynet', ip='10.0.0.10', dimage="acksec/dc26", environment
 #d3 = net.addDocker('d2', ip='10.0.0.2', did='8ef9aa514cf0')
 
 info('*** Adding switches\n')
-s1 = net.addSwitch( 's1', cls=OVSSwitch)
-s2 = net.addSwitch ('s2', cls=OVSSwitch)
-s3 = net.addSwitch ('s3', cls=OVSSwitch)
+s1 = net.addSwitch ('s1')
+s2 = net.addSwitch ('s2')
+s3 = net.addSwitch ('s3')
 
 info('*** Creating links\n')
 net.addLink(s1, s2, port1=2, port2=2)

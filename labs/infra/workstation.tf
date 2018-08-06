@@ -59,6 +59,7 @@ resource "aws_instance" "workstation" {
       "sudo /bin/bash -c 'echo CONTROLLER_IP=${element(aws_instance.controller.*.private_ip, count.index)} > /etc/workstation/workstation.env'",
       "sudo bash /tmp/workstation.sh",
       "cd /home/${element(keys(data.external.user_list.result), count.index)}",
+      "sudo git clone https://github.com/ackSec/DC26.git",
       "sudo rm /tmp/ssh_key.pub"
     ]
   }

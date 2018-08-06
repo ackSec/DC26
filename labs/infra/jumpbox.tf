@@ -33,7 +33,7 @@ resource "aws_instance" "jumpbox" {
 
       echo 'proxy_pass http://$remote_user-controller.${var.environment}-${var.lab_name}-intra.net:8080;' > ../jumpbox/nginx/include/inject_route53_dns.conf
       sed 's@~~~REPLACEME_HOST~~~@http://${aws_instance.jumpbox.public_dns}:8080@g' ../jumpbox/nginx/html/index.html.template > ../jumpbox/nginx/html/index.html
-    EOF
+EOF
   }
 
   provisioner "remote-exec" {

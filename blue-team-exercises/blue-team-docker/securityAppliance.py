@@ -154,6 +154,7 @@ def main():
         print("Flow 3 Generated")
         pusher.set(flow2)
         print("Flow 3 Sent")
+        break
 
 
 if __name__ == '__main__':

@@ -57,17 +57,6 @@ class StaticFlowPusher(object):
         conn.close()
         return ret
 
-    def handler(signum, frame):
-        print 'Got CTRL+C'
-        exit (0)
-
-
-
-
-
-signal.signal(signal.SIGINT, handler)
-
-
 pusher = StaticFlowPusher('controllerIP')
 
 

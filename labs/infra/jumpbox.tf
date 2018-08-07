@@ -4,18 +4,19 @@
 
 resource "aws_instance" "jumpbox" {
   ami           = "ami-a4dc46db"
-  instance_type = "t2.xlarge" #t2.micro / t2.large / t2.xlarge
+  instance_type = "t2.xlarge"                    #t2.micro / t2.large / t2.xlarge
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.user_mapping"]
 
   associate_public_ip_address = true
 
-  subnet_id                   = "${aws_subnet.default.id}"
-  vpc_security_group_ids      = [ "${aws_security_group.jumpbox.id}" ]
+  subnet_id              = "${aws_subnet.default.id}"
+  vpc_security_group_ids = ["${aws_security_group.jumpbox.id}"]
 
   root_block_device {
     volume_type = "gp2"
-//    volume_size = "10"
+
+    //    volume_size = "10"
     delete_on_termination = true
   }
 
@@ -39,7 +40,7 @@ EOF
   provisioner "remote-exec" {
     inline = [
       "sudo mkdir /opt/jumpbox",
-      "sudo chown ubuntu:root /opt/jumpbox"
+      "sudo chown ubuntu:root /opt/jumpbox",
     ]
   }
 
@@ -50,7 +51,7 @@ EOF
 
   provisioner "remote-exec" {
     inline = [
-      "sudo bash /opt/jumpbox/jumpbox.sh"
+      "sudo bash /opt/jumpbox/jumpbox.sh",
     ]
   }
 

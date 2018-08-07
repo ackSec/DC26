@@ -15,8 +15,9 @@ EOF
 }
 
 resource "aws_instance" "workstation" {
-  count         = "${var.workstation_count}"
-  ami           = "ami-ee8c9391"
+  count = "${var.workstation_count}"
+  ami   = "ami-ee8c9391"
+
   #ami           = "ami-93c3d2ec"
   instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
@@ -24,11 +25,11 @@ resource "aws_instance" "workstation" {
 
   associate_public_ip_address = true
 
-  subnet_id                   = "${aws_subnet.default.id}"
-  vpc_security_group_ids      = [ "${element(aws_security_group.workstation.*.id, count.index)}" ]
+  subnet_id              = "${aws_subnet.default.id}"
+  vpc_security_group_ids = ["${element(aws_security_group.workstation.*.id, count.index)}"]
 
   root_block_device {
-    volume_type = "gp2"
+    volume_type           = "gp2"
     delete_on_termination = true
   }
 
@@ -37,7 +38,6 @@ resource "aws_instance" "workstation" {
     user        = "ubuntu"
     private_key = "${file(var.aws_ssh_key_file)}"
   }
-
 
   # upload public key to workstation
   provisioner "file" {
@@ -60,7 +60,7 @@ resource "aws_instance" "workstation" {
       "sudo bash /tmp/workstation.sh",
       "cd /home/${element(keys(data.external.user_list.result), count.index)}",
       "sudo git clone https://github.com/ackSec/DC26.git",
-      "sudo rm /tmp/ssh_key.pub"
+      "sudo rm /tmp/ssh_key.pub",
     ]
   }
 

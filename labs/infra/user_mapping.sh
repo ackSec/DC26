@@ -23,10 +23,10 @@ add_user() {
   user_name=$2
   user_password=$3
   user_password_cnt=$4
-  
+
   user_host_wks=$5
   user_host_cnt=$6
-  
+
   # Add a user-mapping record
   cat >>$USER_MAPPING_FILE<<EOU
   <!-- $user_id - $user_name - WORKSTATION -->
@@ -41,7 +41,7 @@ add_user() {
       <param name="color-scheme">white-black</param>
       <param name="font-size">10</param>
     </connection>
-  
+
     <!-- CONTROLLER -->
     <connection name="Controller">
       <protocol>ssh</protocol>
@@ -53,7 +53,7 @@ add_user() {
       <param name="font-size">10</param>
     </connection>
   </authorize>
-  
+
 EOU
 
   # Add a user-list csv record

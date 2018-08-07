@@ -18,12 +18,14 @@ import dpkt
 import socket
 from snortunsock import snort_listener
 
+
 def mac_addr(address):
     return ':'.join('%02x' % ord(b) for b in address)
 
 
 def ip_to_str(address):
     return socket.inet_ntop(socket.AF_INET, address)
+
 
 class StaticFlowPusher(object):
 
@@ -47,7 +49,7 @@ class StaticFlowPusher(object):
         headers = {
             'Content-type': 'application/json',
             'Accept': 'application/json',
-            }
+        }
         body = json.dumps(data)
         conn = httplib.HTTPConnection(self.server, 8080)
         conn.request(action, path, body, headers)
@@ -57,8 +59,9 @@ class StaticFlowPusher(object):
         conn.close()
         return ret
 
-pusher = StaticFlowPusher('controllerIP')
 
+controllerIP = repr(os.environ.get('CONTROLLER_IP'))
+pusher = StaticFlowPusher(controllerIP)
 
 
 def main():
@@ -85,7 +88,8 @@ def main():
         # Print out the info
         print("Attack detected")
         print 'IP: %s -> %s   (len=%d ttl=%d DF=%d MF=%d offset=%d)\n' % \
-              (ip_to_str(ip.src), ip_to_str(ip.dst), ip.len, ip.ttl, do_not_fragment, more_fragments, fragment_offset)
+              (ip_to_str(ip.src), ip_to_str(ip.dst), ip.len, ip.ttl,
+               do_not_fragment, more_fragments, fragment_offset)
 
     #print('alertmsg: %s' % ''.join(msg.alertmsg))
         attacker = ip_to_str(ip.src)
@@ -93,22 +97,22 @@ def main():
         honeynet = "10.0.0.10"
         print("Generating Flows for SDN Controller based on rule triggered")
 
-        #SW2
-        #traffic flow from victim host (10.0.0.2) to attacker host (10.0.0.1)
+        # SW2
+        # traffic flow from victim host (10.0.0.2) to attacker host (10.0.0.1)
 
         flow1 = {
-            'switch':"00:00:00:00:00:00:00:02",
-            "name":"flow_mod_1",
-            "cookie":"0",
+            'switch': "00:00:00:00:00:00:00:02",
+            "name": "flow_mod_1",
+            "cookie": "0",
             "table_id": "0",
-            "priority":"32768",
+            "priority": "32768",
             "idle_timeout": "60",
             "hard_timeout": "60",
             "match": "in_port:2",
-            "match": "ipv4_src:"+ victim,
-            "match": "ipv4_dst:"+ attacker,
-            "match":"eth_type:ipv4",
-            "active":"true",
+            "match": "ipv4_src:" + victim,
+            "match": "ipv4_dst:" + attacker,
+            "match": "eth_type:ipv4",
+            "active": "true",
             "instruction_apply_actions": "set_field=ipv4_src->10.0.0.10, output=1"
 
         }
@@ -117,38 +121,38 @@ def main():
         print("Flow 1 Sent")
         # traffic flow from attacker host (10.0.0.1) to victim host (10.0.0.2)
         flow2 = {
-            'switch':"00:00:00:00:00:00:00:02",
-            "name":"flow_mod_2",
-            "cookie":"0",
+            'switch': "00:00:00:00:00:00:00:02",
+            "name": "flow_mod_2",
+            "cookie": "0",
             "table_id": "0",
-            "priority":"32768",
+            "priority": "32768",
             "idle_timeout": "60",
             "hard_timeout": "60",
             "match": "in_port:1",
             "match": "ipv4_src:" + attacker,
             "match": "ipv4_dst:" + victim,
-            "match":"eth_type:ipv4",
-            "active":"true",
+            "match": "eth_type:ipv4",
+            "active": "true",
             "instruction_apply_actions": "set_field=ipv4_dst->" + victim + ", output=2"
         }
         print("Flow 2 Generated")
         pusher.set(flow2)
         print("Flow 2 Sent")
-        #SW3
-        #traffic from honeynet (10.0.0.10) going through SW3 and back to the attacker host (10.0.0.1)
+        # SW3
+        # traffic from honeynet (10.0.0.10) going through SW3 and back to the attacker host (10.0.0.1)
         flow3 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_3",
-            "cookie":"0",
+            'switch': "00:00:00:00:00:00:00:03",
+            "name": "flow_mod_3",
+            "cookie": "0",
             "table_id": "0",
-            "priority":"32768",
+            "priority": "32768",
             "idle_timeout": "60",
             "hard_timeout": "60",
             "match": "in_port:3",
             "match": "ipv4_src:" + honeynet,
             "match": "ipv4_dst:" + attacker,
-            "match":"eth_type:ipv4",
-            "active":"true",
+            "match": "eth_type:ipv4",
+            "active": "true",
             "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=1"
         }
         print("Flow 3 Generated")

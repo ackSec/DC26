@@ -1,1 +1,0 @@
-sudo snort -A unsock -l /tmp -c /etc/nsm/securityonion1-eth0/snort.conf -i eth0

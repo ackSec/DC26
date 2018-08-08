@@ -17,8 +17,8 @@ EOF
 resource "aws_instance" "workstation" {
   count         = "${var.workstation_count}"
   #ami           = "ami-a4dc46db" # public ubuntu image
-  ami           = "ami-ee8c9391" # private workstation image
-  #ami           = "ami-93c3d2ec"
+  #ami           = "ami-ee8c9391" # private workstation image
+  ami           = "ami-0c45e6b9dbaa16589" # new workstation image
   instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.ssh_key"]
@@ -59,7 +59,9 @@ resource "aws_instance" "workstation" {
       "sudo /bin/bash -c 'echo export CONTROLLER_IP=${element(aws_instance.controller.*.private_ip, count.index)} > /etc/profile.d/workstation.sh'",
       "sudo bash /tmp/workstation.sh",
       "cd /home/${element(keys(data.external.user_list.result), count.index)}",
-      "sudo git clone https://github.com/ackSec/DC26.git",
+      "sudo sed -i -e 's/#force_color_prompt=yes/force_color_prompt=yes/g' .bashrc",
+      "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'source .bashrc'",
+      "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'git clone https://github.com/ackSec/DC26.git'",
       "sudo rm /tmp/ssh_key.pub"
     ]
   }

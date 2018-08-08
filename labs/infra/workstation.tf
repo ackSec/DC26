@@ -15,9 +15,9 @@ EOF
 }
 
 resource "aws_instance" "workstation" {
-  count = "${var.workstation_count}"
-  ami   = "ami-ee8c9391"
-
+  count         = "${var.workstation_count}"
+  #ami           = "ami-a4dc46db" # public ubuntu image
+  ami           = "ami-ee8c9391" # private workstation image
   #ami           = "ami-93c3d2ec"
   instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
@@ -25,11 +25,11 @@ resource "aws_instance" "workstation" {
 
   associate_public_ip_address = true
 
-  subnet_id              = "${aws_subnet.default.id}"
-  vpc_security_group_ids = ["${element(aws_security_group.workstation.*.id, count.index)}"]
+  subnet_id                   = "${aws_subnet.default.id}"
+  vpc_security_group_ids      = [ "${element(aws_security_group.workstation.*.id, count.index)}" ]
 
   root_block_device {
-    volume_type           = "gp2"
+    volume_type = "gp2"
     delete_on_termination = true
   }
 
@@ -38,6 +38,7 @@ resource "aws_instance" "workstation" {
     user        = "ubuntu"
     private_key = "${file(var.aws_ssh_key_file)}"
   }
+
 
   # upload public key to workstation
   provisioner "file" {
@@ -55,12 +56,11 @@ resource "aws_instance" "workstation" {
       "sudo useradd -m -s /bin/bash -p $(echo \"${element(random_string.password.*.result, count.index)}\" | openssl passwd -1 -stdin) ${element(keys(data.external.user_list.result), count.index)}",
       "sudo usermod -aG sudo ${element(keys(data.external.user_list.result), count.index)}",
       "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'ls -la /home; mkdir -p $HOME/.ssh; echo \"$(cat /tmp/ssh_key.pub)\" >> $HOME/.ssh/authorized_keys'",
-      "sudo mkdir -p /etc/workstation",
-      "sudo /bin/bash -c 'echo CONTROLLER_IP=${element(aws_instance.controller.*.private_ip, count.index)} > /etc/workstation/workstation.env'",
+      "sudo /bin/bash -c 'echo export CONTROLLER_IP=${element(aws_instance.controller.*.private_ip, count.index)} > /etc/profile.d/workstation.sh'",
       "sudo bash /tmp/workstation.sh",
       "cd /home/${element(keys(data.external.user_list.result), count.index)}",
       "sudo git clone https://github.com/ackSec/DC26.git",
-      "sudo rm /tmp/ssh_key.pub",
+      "sudo rm /tmp/ssh_key.pub"
     ]
   }
 

@@ -6,6 +6,10 @@ output "workstation_id" {
   value = "${aws_instance.workstation.*.id}"
 }
 
+output "controller_id" {
+  value = "${aws_instance.controller.*.id}"
+}
+
 output "jumpbox_id" {
   value = "${aws_instance.jumpbox.id}"
 }

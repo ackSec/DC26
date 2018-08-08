@@ -7,6 +7,15 @@
 #   - initialize user-mapping.xml and user-list-result.csv files
 resource "null_resource" "user_mapping" {
 
+  triggers {
+    workstation_dns_list = "${join(",", aws_instance.workstation.*.private_dns)}"
+    controller_dns_list = "${join(",", aws_instance.workstation.*.private_dns)}"
+    user_name_list = "${join(",", keys(data.external.user_list.result))}"
+    user_count = "${var.workstation_count}"
+    ssh_password_list = "${join(",", random_string.password.*.id)}"
+    controller_password_list = "${join(",", random_string.password_controller.*.id)}"
+  }
+
   provisioner "local-exec" {
     command = "bash user_mapping.sh"
 

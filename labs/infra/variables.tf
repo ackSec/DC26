@@ -72,7 +72,8 @@ variable "zoneID" {
   description = "Route53 Zone ID"
 
   default = {
-    private = "Z3MXGP9U26FV33"
+    #private = "Z3MXGP9U26FV33"
     public  = "Z2XAVPOFOKQ5WF"
+    #public = "Z28NYKYSBM6RDC" # testing hosted zone gp
   }
 }

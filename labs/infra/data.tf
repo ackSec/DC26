@@ -17,3 +17,12 @@ data "external" "my_ip" {
     "echo \"{\\\"ip\\\":\\\"$(curl ipinfo.io/ip)\\\"}\""
   ]
 }
+
+data "template_file" "floodlight_init" {
+  count = "${var.workstation_count}"
+  template = "${file("templates/init.tpl")}"
+
+  vars {
+    user = "${element(keys(data.external.user_list.result), count.index)}"
+  }
+}

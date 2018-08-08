@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo docker rm -f mn.honeynet
-sudo docker rm -f mn.attacker
-sudo docker rm -f mn.victim
+sudo docker rm -f mn.attacker1
+sudo docker rm -f mn.attacker2
 sudo mn -c

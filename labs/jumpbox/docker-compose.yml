@@ -1,36 +1,36 @@
-version: "3.3"
+version:              "3.3"
 
 services:
   guacamole:
-    image: guacamole/guacamole:0.9.14
+    image:            guacamole/guacamole:0.9.14
     networks:
       - overlay
-    env_file: docker.env
+    env_file:         docker.env
     volumes:
       - ./guacamole:/etc/guacamole:consistent
-    command: ['/bin/bash', '/etc/guacamole/start.sh']
+    command:          ['/bin/bash', '/etc/guacamole/start.sh']
     deploy:
       restart_policy:
-        condition: on-failure
+        condition:    on-failure
 
   guacd:
-    image: guacamole/guacd:0.9.14
+    image:            guacamole/guacd:0.9.14
     networks:
       - overlay
-    env_file: docker.env
+    env_file:         docker.env
     deploy:
       restart_policy:
-        condition: on-failure
+        condition:    on-failure
 
   nginx:
-    image: nginx:1.15.1
+    image:            nginx:1.15.1
     ports:
       - "80:80"
       - "443:443"
       - "8080:8080"
     networks:
       - overlay
-    env_file: docker.env
+    env_file:         docker.env
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/include:/etc/nginx/include:ro
@@ -38,7 +38,7 @@ services:
       - /etc/ssl:/etc/ssl:ro
     deploy:
       restart_policy:
-        condition: on-failure
+        condition:    on-failure
 
 networks:
   overlay:

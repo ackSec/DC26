@@ -25,10 +25,10 @@ verify_exitcode() {
 install_docker() {
   log "Installing docker..."
   sudo apt-get install -y \
-      apt-transport-https \
-      ca-certificates \
-      curl \
-      software-properties-common
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
 
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -38,9 +38,9 @@ install_docker() {
     exit 1
 
   sudo add-apt-repository \
-     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
      $(lsb_release -cs) \
-     stable"
+    stable"
 
   sudo apt-get update
   sudo apt-get install -y docker-ce
@@ -66,11 +66,11 @@ add_images(){
 
 log " *** Installing Docker on Workstation... ***"
 install_docker
-  verify_exitcode 'install_docker'
+verify_exitcode 'install_docker'
 
 log " *** Pulling Images ***"
 add_images
-  verify_exitcode 'add_images'
+verify_exitcode 'add_images'
 
 
 log " *** Workstation started ***"

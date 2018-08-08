@@ -17,8 +17,8 @@ EOF
 resource "aws_instance" "workstation" {
   count         = "${var.workstation_count}"
   #ami           = "ami-a4dc46db" # public ubuntu image
-  ami           = "ami-ee8c9391" # private workstation image
-  #ami           = "ami-93c3d2ec"
+  #ami           = "ami-ee8c9391" # private workstation image
+  ami           = "ami-0c45e6b9dbaa16589" # new workstation image
   instance_type = "t2.medium"
   key_name      = "${var.aws_ssh_key_name}"
   depends_on    = ["null_resource.ssh_key"]

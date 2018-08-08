@@ -59,7 +59,9 @@ resource "aws_instance" "workstation" {
       "sudo /bin/bash -c 'echo export CONTROLLER_IP=${element(aws_instance.controller.*.private_ip, count.index)} > /etc/profile.d/workstation.sh'",
       "sudo bash /tmp/workstation.sh",
       "cd /home/${element(keys(data.external.user_list.result), count.index)}",
-      "sudo git clone https://github.com/ackSec/DC26.git",
+      "sudo sed -i -e 's/#force_color_prompt=yes/force_color_prompt=yes/g' .bashrc",
+      "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'source .bashrc'",
+      "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'git clone https://github.com/ackSec/DC26.git'",
       "sudo rm /tmp/ssh_key.pub"
     ]
   }

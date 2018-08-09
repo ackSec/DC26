@@ -76,21 +76,9 @@ flow2 = {
     "actions":"output=1"
 }
 
-flow3 = {
-    'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_3",
-    "cookie":"0",
-    "priority":"32768",
-    "eth_type":"arp",
-    "actions": "output=1",
-    "actions": "output=2",
-    "actions": "output=3",
-    "active":"true"
-}
-
 #SW2
 
-flow4 = {
+flow3 = {
     'switch':"00:00:00:00:00:00:00:02",
     "name":"flow_mod_4",
     "cookie":"0",
@@ -103,7 +91,7 @@ flow4 = {
     "actions":"output=2"
 }
 
-flow5 = {
+flow4 = {
     'switch':"00:00:00:00:00:00:00:02",
     "name":"flow_mod_5",
     "cookie":"0",
@@ -111,26 +99,14 @@ flow5 = {
     "in_port":"2",
     "ipv4_src":"10.0.0.1",
     "ipv4_dst":"10.0.0.2",
-    "eth_type":"ipv4",
+    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=1"
 }
 
-flow6 = {
-    'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_6",
-    "cookie":"0",
-    "priority":"32768",
-    "eth_type":"arp",
-    "actions":"output=1",
-    "actions":"output=2",
-    "actions":"output=3",
-    "active":"true"
-}
-
 #drop honey - not sure if this is needed.  Confirm with Jon.
 
-flow8 = {
+flow5 = {
 'switch':"00:00:00:00:00:00:00:03",
 "name":"flow_mod_8",
 "cookie":"0xbad",
@@ -177,8 +153,6 @@ pusher.set(flow2)
 pusher.set(flow3)
 pusher.set(flow4)
 pusher.set(flow5)
-pusher.set(flow6)
-pusher.set(flow8)
 
 info('*** Running CLI\n')
 CLI(net)

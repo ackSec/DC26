@@ -1,0 +1,15 @@
+{
+     "region":  {
+          "name": "Region #1",
+          "prioritizedControllerIps": [
+               "192.168.2.70"
+         ],
+         "deviceIps":  [
+               "192.168.2.1",
+               "192.168.2.2"
+         ],
+         "deviceIpRanges": [
+               "192.168.2.1-3"
+         ]
+     }
+}

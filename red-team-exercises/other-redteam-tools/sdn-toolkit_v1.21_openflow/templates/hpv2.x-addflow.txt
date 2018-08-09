@@ -1,0 +1,17 @@
+{
+	"flow": {
+			"cookie": "0",
+			"table_id": 0,
+			"priority": <PRIORITY>,
+			"idle_timeout": 300,
+			"hard_timeout": 300,
+			"match": [
+					{"ipv4_src": "<NETWORKSOURCE>"},
+					{"ipv4_dst": "<NETWORKDESTINATION>"},
+					{"ip_proto":"tcp"},
+					{"tcp_dst": <DESTINATIONPORT>},						
+					{"eth_type": "ipv4"}
+					],
+			"actions": <ACTIONS>
+			}
+}

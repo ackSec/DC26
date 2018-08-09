@@ -1,0 +1,1 @@
+{ "auth": {"identity": {"methods": ["password"],"password": {"user": {"name": <USER>,"domain": { "id": "default" },"password": <PASSWORD>}}}}

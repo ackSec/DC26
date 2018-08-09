@@ -1,0 +1,14 @@
+{
+		"installInHw":"true",
+		"name":"<FLOWNAME>",
+		"node":{
+		"id":"<SWITCH>",
+		"type":"OF"
+		},
+		"cookie":"0",
+		"priority":"<PRIORITY>",
+		"etherType":"0x800",
+		"nwSrc":"<NETWORKSOURCE>/32",
+		"nwDst":"<NETWORKDESTINATION>/32",
+		"actions":["DROP"]
+	}

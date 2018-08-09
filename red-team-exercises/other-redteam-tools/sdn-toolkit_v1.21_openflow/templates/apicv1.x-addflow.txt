@@ -1,0 +1,17 @@
+<fvTenant name="<SWITCH>">
+    <fvAp name="<FLOWNAME>">
+        <fvAEPg name="db">
+            <fvRsBd tnFvBDName="bd1"/>
+            <fvRsCons tnVzBrCPName="flow"/>
+            <fvRsDomAtt tDn="<NETWORKDESTINATION>"/>
+        </fvAEPg>
+    </fvAp>
+    <vzFilter name="flow">
+        <vzEntry dFromPort="<DESTINATIONPORT>" name="DPort-<DESTINATIONPORT>" prot="tcp" etherT="ip" />
+    </vzFilter>
+    <vzBrCP name="flow">
+        <vzSubj name="flow">
+            <vzRsSubjFiltAtt tnVzFilterName="flow"/>
+        </vzSubj>
+    </vzBrCP>
+</fvTenant>

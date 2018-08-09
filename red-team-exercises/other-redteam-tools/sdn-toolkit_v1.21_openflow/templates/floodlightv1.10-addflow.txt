@@ -1,0 +1,12 @@
+{
+		"switch":"<SWITCH>",
+		"name":"<FLOWNAME>",
+		"cookie":"0",
+		"priority":"<PRIORITY>",
+		"eth_typ":"0x800",
+		"ipv4_src":"<NETWORKSOURCE>",
+		"ipv4_dst":"<NETWORKDESTINATION>",
+		"tcp_dst":"<DESTINATIONPORT>",	
+		"active":"true",
+		"actions":"<ACTIONS>"
+		}

@@ -1,0 +1,15 @@
+{“network-policy”:
+				{“fq_name”: [“<SWITCH>”, “admin”, “<FLOWNAME>”],
+						“network_policy_entries”:
+							{“policy_rule”:
+								[{“direction”: “<>”,
+								“dst_addresses”:
+									[{“virtual_network”: “<SWITCH>:admin:<NETWORKSOURCE>”}], “dst_ports”:
+									[{“start_port”: <DESTINATIONPORT>, “end_port”: <DESTINATIONPORT>}],
+								“simple_action”: “<ACTIONS>”,
+								“src_addresses”:
+									[{“virtual_network”: “<SWITCH>:admin:<NETWORKDESTINATION>”}]
+								}]
+							}
+				}
+}

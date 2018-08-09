@@ -1,0 +1,11 @@
+{
+		"switch":"<SWITCH>",
+		"name":"<FLOWNAME>",
+		"cookie":"0",
+		"priority":"<PRIORITY>",
+		"ether-type":"0x800",
+		"src-ip":"<NETWORKSOURCE>",
+		"dst-ip":"<NETWORKDESTINATION>",
+		"active":"true",
+		"actions":""
+		}

@@ -1,0 +1,14 @@
+{“network-policy”:
+				{“fq_name”: [“<SWITCH>”, “admin”, “<FLOWNAME>”],
+						“network_policy_entries”:
+							{“policy_rule”:
+								[{“direction”: “<>”,
+								“dst_addresses”:
+									[{“virtual_network”: “<SWITCH>:admin:<NETWORKSOURCE>”}],
+								“simple_action”: “drop”,
+								“src_addresses”:
+									[{“virtual_network”: “<SWITCH>:admin:<NETWORKDESTINATION>”}],
+								}]
+							}
+				}
+}

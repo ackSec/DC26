@@ -10,6 +10,7 @@ setLogLevel('info')
 
 
 controllerIP = repr(os.environ.get('CONTROLLER_IP'))
+
 class DatacenterBasicTopo:
     "Datacenter topology with 4 hosts per rack, 4 racks, and a root switch"
     self = Containernet(controller=RemoteController)
@@ -33,7 +34,8 @@ class DatacenterBasicTopo:
 
         for n in irange(1, 5):
             #host = self.addHost( 'h%sr%s' % ( n, loc ) )
-            host = self.addDocker('h%sr%s' % (n, loc), dimage="ubuntu:trusty")
+            #host = self.addHost('h%sr%s' % (n, loc), dimage="ubuntu:trusty")
+            net.addDocker('h%sr%s', dimage="acksec/dc26", environment={"CONTROLLER_IP": controllerIP}, working_dir="/root")
             self.addLink(switch, host)
 
         # Return list of top-of-rack switches for this rack

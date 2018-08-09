@@ -114,6 +114,16 @@ flow21 = {
     "actions":"output=1"
 }
 
+flow22 = {
+    'switch':"00:00:00:00:00:00:00:01",
+    "name":"flow_mod_22",
+    "cookie":"0",
+    "priority":"32768",
+    "in_port":"2",
+    "active":"true",
+    "actions":"output=1"
+}
+
 #SW2
 
 flow3 = {
@@ -139,6 +149,16 @@ flow31 = {
 #    "ipv4_src":"10.0.0.2",
 #    "ipv4_dst":"10.0.0.1",
     "eth_type":"0x0800",
+    "active":"true",
+    "actions":"output=2"
+}
+
+flow32 = {
+    'switch':"00:00:00:00:00:00:00:01",
+    "name":"flow_mod_32",
+    "cookie":"0",
+    "priority":"32768",
+    "in_port":"1",
     "active":"true",
     "actions":"output=2"
 }
@@ -170,6 +190,15 @@ flow41 = {
     "actions":"output=1"
 }
 
+flow42 = {
+    'switch':"00:00:00:00:00:00:00:01",
+    "name":"flow_mod_22",
+    "cookie":"0",
+    "priority":"32768",
+    "in_port":"2",
+    "active":"true",
+    "actions":"output=1"
+}
 
 #drop honey - not sure if this is needed.  Confirm with Jon.
 

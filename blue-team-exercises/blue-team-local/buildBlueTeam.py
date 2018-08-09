@@ -192,7 +192,7 @@ flow41 = {
 
 flow42 = {
     'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_22",
+    "name":"flow_mod_42",
     "cookie":"0",
     "priority":"32768",
     "in_port":"2",
@@ -243,16 +243,22 @@ net.start()
 #info('*** Testing connectivity\n')
 #net.ping([h1, h2])
 info('*** Pushing flows\n')
+
+# TCP Flows
 pusher.set(flow1)
-pusher.set(flow11)
-pusher.set(flow12)
 pusher.set(flow2)
 pusher.set(flow3)
 pusher.set(flow4)
+
+#ICMP Flows
+pusher.set(flow11)
 pusher.set(flow21)
 pusher.set(flow31)
 pusher.set(flow41)
 pusher.set(flow5)
+
+# port to port flows
+pusher.set(flow12)
 pusher.set(flow22)
 pusher.set(flow32)
 pusher.set(flow42)

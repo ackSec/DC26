@@ -64,15 +64,12 @@ def main():
             'switch': "00:00:00:00:00:00:00:02",
             "name": "flow_mod_1",
             "cookie": "0",
-            "table_id": "0",
             "priority": "32768",
-            "idle_timeout": "60",
-            "hard_timeout": "60",
-            "match": "in_port:2",
-            "match": "ipv4_src:10.0.0.2",
-            "match": "ipv4_dst:10.0.0.1",
-            "match": "eth_type:ipv4",
-            "active": "true",
+            "in_port":"2",
+            "ipv4_src":"10.0.0.2",
+            "ipv4_dst":"10.0.0.1",
+            "eth_type":"0x0800",
+            "active":"true",
             "instruction_apply_actions": "set_field=ipv4_src->10.0.0.10, output=1"
 
         }
@@ -85,16 +82,13 @@ def main():
             'switch': "00:00:00:00:00:00:00:02",
             "name": "flow_mod_2",
             "cookie": "0",
-            "table_id": "0",
             "priority": "32768",
-            "idle_timeout": "60",
-            "hard_timeout": "60",
             "match": "in_port:1",
-            "match": "ipv4_src:10.0.0.1",
-            "match": "ipv4_dst:10.0.0.2",
-            "match": "eth_type:ipv4",
-            "active": "true",
-            "instruction_apply_actions": "set_field=ipv4_dst->" + victim + ", output=2"
+            "ipv4_src":"10.0.0.1",
+            "ipv4_dst":"10.0.0.2",
+            "eth_type":"0x0800",
+            "active":"true",
+            "instruction_apply_actions": "set_field=ipv4_dst->10.0.0.2, output=2"
         }
         print("Flow 2 Generated")
         pusher.set(flow2)
@@ -106,16 +100,13 @@ def main():
             'switch': "00:00:00:00:00:00:00:03",
             "name": "flow_mod_3",
             "cookie": "0",
-            "table_id": "0",
             "priority": "32768",
-            "idle_timeout": "60",
-            "hard_timeout": "60",
-            "match": "in_port:3",
-            "match": "ipv4_src:10.0.0.10",
-            "match": "ipv4_dst:10.0.0.1,
-            "match": "eth_type:ipv4",
-            "active": "true",
-            "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=1"
+            "in_port":"3",
+            "ipv4_src":"10.0.0.10"
+            "ipv4_dst":"10.0.0.1",
+            "eth_type":"0x0800",
+            "active":"true",
+            "instruction_apply_actions": "set_field=ipv4_src->10.0.0.2, output=1"
         }
         print("Flow 3 Generated")
         pusher.set(flow2)

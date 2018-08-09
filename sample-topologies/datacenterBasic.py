@@ -11,7 +11,7 @@ setLogLevel('info')
 
 
 
-class DatacenterBasicTopo:
+class DatacenterBasicTopo (Topo):
     "Datacenter topology with 4 hosts per rack, 4 racks, and a root switch"
     controllerIP = repr(os.environ.get('CONTROLLER_IP'))
     self = Containernet(controller=RemoteController)

@@ -77,6 +77,16 @@ flow11 = {
     "actions":"output=2"
 }
 
+flow12 = {
+    'switch':"00:00:00:00:00:00:00:01",
+    "name":"flow_mod_12",
+    "cookie":"0",
+    "priority":"32768",
+    "in_port":"1",
+    "active":"true",
+    "actions":"output=2"
+}
+
 flow2 = {
     'switch':"00:00:00:00:00:00:00:01",
     "name":"flow_mod_2",

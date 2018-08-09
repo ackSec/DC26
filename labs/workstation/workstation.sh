@@ -37,7 +37,6 @@ install_docker() {
     git \
     maven \
     software-properties-common
-
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
   docker_fp=$(sudo apt-key fingerprint 0EBFCD88 | grep 'Key fingerprint' | sed 's/.* = //g' | sed 's/ //g')

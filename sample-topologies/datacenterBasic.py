@@ -9,10 +9,11 @@ import os
 setLogLevel('info')
 
 
-controllerIP = repr(os.environ.get('CONTROLLER_IP'))
+
 
 class DatacenterBasicTopo:
     "Datacenter topology with 4 hosts per rack, 4 racks, and a root switch"
+    controllerIP = repr(os.environ.get('CONTROLLER_IP'))
     self = Containernet(controller=RemoteController)
     info('*** Adding controller\n')
     self.addController('c0', controller=RemoteController, ip=controllerIP, port=6653)

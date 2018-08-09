@@ -61,7 +61,7 @@ class StaticFlowPusher(object):
 
 
 controllerIP = repr(os.environ.get('CONTROLLER_IP'))
-pusher = StaticFlowPusher(controllerIP)
+pusher = StaticFlowPusher(controllerAddress)
 
 
 def main():

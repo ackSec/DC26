@@ -15,7 +15,7 @@ class DatacenterBasicTopo:
     "Datacenter topology with 4 hosts per rack, 4 racks, and a root switch"
     self = Containernet(controller=RemoteController)
     info('*** Adding controller\n')
-    self.addController('c0', controller=RemoteController,ip=controllerIP, port=6653)
+    self.addController('c0', controller=RemoteController, ip=controllerIP, port=6653)
 
     def build(self):
         self.racks = []

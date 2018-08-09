@@ -63,6 +63,9 @@ resource "aws_instance" "workstation" {
       "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'source .bashrc'",
       "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'git clone https://github.com/ackSec/DC26.git'",
       "sudo su - ${element(keys(data.external.user_list.result), count.index)} /bin/bash -c 'git clone https://github.com/ackSec/sdnpwn.git'",
+      "cd sdnpwn/",
+      "sudo chmod +x sdnpwn.py",
+      "sudo chmod +x setup.sh",
       "sudo rm /tmp/ssh_key.pub"
     ]
   }

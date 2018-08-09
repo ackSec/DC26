@@ -56,6 +56,7 @@ install_docker() {
 add_images(){
   log "Adding images..."
   sudo service docker start
+  pip install dpkt
   sudo docker pull acksec/snort:latest
   sudo docker pull acksec/dc26:latest
   sudo docker pull acksec/honeynet:latest

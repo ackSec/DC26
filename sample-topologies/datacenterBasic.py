@@ -36,7 +36,7 @@ class DatacenterBasicTopo:
         for n in irange(1, 5):
             #host = self.addHost( 'h%sr%s' % ( n, loc ) )
             #host = self.addHost('h%sr%s' % (n, loc), dimage="ubuntu:trusty")
-            net.addDocker('h%sr%s', dimage="acksec/dc26", environment={"CONTROLLER_IP": controllerIP}, working_dir="/root")
+            host = net.addDocker('h%sr%s', dimage="acksec/dc26", environment={"CONTROLLER_IP": controllerIP}, working_dir="/root")
             self.addLink(switch, host)
 
         # Return list of top-of-rack switches for this rack

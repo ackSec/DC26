@@ -70,9 +70,9 @@ flow11 = {
     "priority":"32768",
     "in_port":"1",
     "ip_proto":"0x01",
-    "ipv4_src":"10.0.0.1",
-    "ipv4_dst":"10.0.0.2",
-    "eth_type":"0x0800",
+#    "ipv4_src":"10.0.0.1",
+#    "ipv4_dst":"10.0.0.2",
+#    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=2"
 }
@@ -97,9 +97,9 @@ flow21 = {
     "priority":"32768",
     "in_port":"2",
     "ip_proto":"0x01",
-    "ipv4_src":"10.0.0.2",
-    "ipv4_dst":"10.0.0.1",
-    "eth_type":"0x0800",
+#    "ipv4_src":"10.0.0.2",
+#    "ipv4_dst":"10.0.0.1",
+#    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=1"
 }
@@ -126,9 +126,9 @@ flow31 = {
     "priority":"32768",
     "in_port":"1",
     "ip_proto":"0x01",
-    "ipv4_src":"10.0.0.2",
-    "ipv4_dst":"10.0.0.1",
-    "eth_type":"0x0800",
+#    "ipv4_src":"10.0.0.2",
+#    "ipv4_dst":"10.0.0.1",
+#    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=2"
 }
@@ -153,9 +153,9 @@ flow41 = {
     "priority":"32768",
     "in_port":"2",
     "ip_proto":"0x01",
-    "ipv4_src":"10.0.0.1",
-    "ipv4_dst":"10.0.0.2",
-    "eth_type":"0x0800",
+#    "ipv4_src":"10.0.0.1",
+#    "ipv4_dst":"10.0.0.2",
+#    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=1"
 }

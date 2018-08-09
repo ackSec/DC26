@@ -43,6 +43,4 @@ class DatacenterBasicTopo:
         return [switch]
 
 # Allows the file to be imported using `mn --custom <filename> --topo dcbasic`
- topos = {
-    'dcbasic': DatacenterBasicTopo
- }
+topos = {'dcbasic': DatacenterBasicTopo}

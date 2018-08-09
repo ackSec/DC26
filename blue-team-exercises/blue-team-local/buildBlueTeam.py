@@ -56,6 +56,19 @@ flow1 = {
     "cookie":"0",
     "priority":"32768",
     "in_port":"1",
+    "ipv4_src":"10.0.0.1",
+    "ipv4_dst":"10.0.0.2",
+    "eth_type":"0x0800",
+    "active":"true",
+    "actions":"output=2"
+}
+
+flow11 = {
+    'switch':"00:00:00:00:00:00:00:01",
+    "name":"flow_mod_1",
+    "cookie":"0",
+    "priority":"32768",
+    "in_port":"1",
     "ip_proto":"0x01",
     "ipv4_src":"10.0.0.1",
     "ipv4_dst":"10.0.0.2",
@@ -65,6 +78,19 @@ flow1 = {
 }
 
 flow2 = {
+    'switch':"00:00:00:00:00:00:00:01",
+    "name":"flow_mod_2",
+    "cookie":"0",
+    "priority":"32768",
+    "in_port":"2",
+    "ipv4_src":"10.0.0.2",
+    "ipv4_dst":"10.0.0.1",
+    "eth_type":"0x0800",
+    "active":"true",
+    "actions":"output=1"
+}
+
+flow21 = {
     'switch':"00:00:00:00:00:00:00:01",
     "name":"flow_mod_2",
     "cookie":"0",
@@ -86,6 +112,19 @@ flow3 = {
     "cookie":"0",
     "priority":"32768",
     "in_port":"1",
+    "ipv4_src":"10.0.0.2",
+    "ipv4_dst":"10.0.0.1",
+    "eth_type":"0x0800",
+    "active":"true",
+    "actions":"output=2"
+}
+
+flow31 = {
+    'switch':"00:00:00:00:00:00:00:02",
+    "name":"flow_mod_4",
+    "cookie":"0",
+    "priority":"32768",
+    "in_port":"1",
     "ip_proto":"0x01",
     "ipv4_src":"10.0.0.2",
     "ipv4_dst":"10.0.0.1",
@@ -100,6 +139,19 @@ flow4 = {
     "cookie":"0",
     "priority":"32768",
     "in_port":"2",
+    "ipv4_src":"10.0.0.1",
+    "ipv4_dst":"10.0.0.2",
+    "eth_type":"0x0800",
+    "active":"true",
+    "actions":"output=1"
+}
+
+flow41 = {
+    'switch':"00:00:00:00:00:00:00:02",
+    "name":"flow_mod_5",
+    "cookie":"0",
+    "priority":"32768",
+    "in_port":"2",
     "ip_proto":"0x01",
     "ipv4_src":"10.0.0.1",
     "ipv4_dst":"10.0.0.2",
@@ -107,6 +159,7 @@ flow4 = {
     "active":"true",
     "actions":"output=1"
 }
+
 
 #drop honey - not sure if this is needed.  Confirm with Jon.
 
@@ -120,7 +173,6 @@ flow5 = {
 "hard_timeout": "0",
 "in_port":"1",
 "action": ""
-
 }
 
 

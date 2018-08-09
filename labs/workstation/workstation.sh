@@ -28,6 +28,14 @@ install_docker() {
     apt-transport-https \
     ca-certificates \
     curl \
+    python3 \
+    python3-netifaces \
+    python3-scipy \
+    bridge-utils \
+    python3-tabulate \
+    python3-pip \
+    git \
+    maven \
     software-properties-common
 
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

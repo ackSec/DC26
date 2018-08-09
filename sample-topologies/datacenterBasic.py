@@ -5,15 +5,16 @@ from mininet.node import RemoteController
 from mininet.cli import CLI
 from mininet.link import TCLink
 from mininet.log import info, setLogLevel
+import os
 setLogLevel('info')
 
 
+controllerIP = repr(os.environ.get('CONTROLLER_IP'))
 class DatacenterBasicTopo:
     "Datacenter topology with 4 hosts per rack, 4 racks, and a root switch"
     self = Containernet(controller=RemoteController)
     info('*** Adding controller\n')
-    self.addController('c0', controller=RemoteController,
-                       ip='172.31.2.32', port=6653)
+    self.addController('c0', controller=RemoteController,ip=controllerIP, port=6653)
 
     def build(self):
         self.racks = []

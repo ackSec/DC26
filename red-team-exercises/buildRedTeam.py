@@ -18,7 +18,6 @@ net.addController( 'c0', controller=RemoteController, ip=controllerIP, port=6653
 info('*** Adding docker containers\n')
 h1 = net.addDocker('attacker1', ip='10.0.0.1', dimage="acksec/dc26", environment={"CONTROLLER_IP": controllerIP}, working_dir="/root")
 h2 = net.addDocker('attacker2', ip='10.0.0.2', dimage="acksec/dc26", environment={"CONTROLLER_IP": controllerIP}, working_dir="/root")
-
 info('*** Adding switches\n')
 s1 = net.addSwitch('s1')
 s2 = net.addSwitch('s2')

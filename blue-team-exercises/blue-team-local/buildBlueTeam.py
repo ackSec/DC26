@@ -72,7 +72,7 @@ flow11 = {
     "ip_proto":"0x01",
 #    "ipv4_src":"10.0.0.1",
 #    "ipv4_dst":"10.0.0.2",
-#    "eth_type":"0x0800",
+    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=2"
 }
@@ -99,7 +99,7 @@ flow21 = {
     "ip_proto":"0x01",
 #    "ipv4_src":"10.0.0.2",
 #    "ipv4_dst":"10.0.0.1",
-#    "eth_type":"0x0800",
+    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=1"
 }
@@ -128,7 +128,7 @@ flow31 = {
     "ip_proto":"0x01",
 #    "ipv4_src":"10.0.0.2",
 #    "ipv4_dst":"10.0.0.1",
-#    "eth_type":"0x0800",
+    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=2"
 }
@@ -155,7 +155,7 @@ flow41 = {
     "ip_proto":"0x01",
 #    "ipv4_src":"10.0.0.1",
 #    "ipv4_dst":"10.0.0.2",
-#    "eth_type":"0x0800",
+    "eth_type":"0x0800",
     "active":"true",
     "actions":"output=1"
 }

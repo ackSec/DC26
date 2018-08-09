@@ -65,7 +65,7 @@ flow1 = {
 
 flow11 = {
     'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_1",
+    "name":"flow_mod_11",
     "cookie":"0",
     "priority":"32768",
     "in_port":"1",
@@ -92,7 +92,7 @@ flow2 = {
 
 flow21 = {
     'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_2",
+    "name":"flow_mod_21",
     "cookie":"0",
     "priority":"32768",
     "in_port":"2",
@@ -108,7 +108,7 @@ flow21 = {
 
 flow3 = {
     'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_4",
+    "name":"flow_mod_3",
     "cookie":"0",
     "priority":"32768",
     "in_port":"1",
@@ -121,7 +121,7 @@ flow3 = {
 
 flow31 = {
     'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_4",
+    "name":"flow_mod_31",
     "cookie":"0",
     "priority":"32768",
     "in_port":"1",
@@ -135,7 +135,7 @@ flow31 = {
 
 flow4 = {
     'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_5",
+    "name":"flow_mod_4",
     "cookie":"0",
     "priority":"32768",
     "in_port":"2",
@@ -148,7 +148,7 @@ flow4 = {
 
 flow41 = {
     'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_5",
+    "name":"flow_mod_41",
     "cookie":"0",
     "priority":"32768",
     "in_port":"2",

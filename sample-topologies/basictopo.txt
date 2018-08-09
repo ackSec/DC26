@@ -1,0 +1,1 @@
+sudo mn --switch ovs --controller=remote,ip=$CONTROLLER_IP,port=6653 --topo tree,depth=2,fanout=8

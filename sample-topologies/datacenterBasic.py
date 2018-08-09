@@ -42,7 +42,7 @@ class DatacenterBasicTopo:
         # Return list of top-of-rack switches for this rack
         return [switch]
 
-# Allows the file to be imported using `mn --custom <filename> --topo faucet`
-# topos = {
-#    'faucet': DatacenterBasicTopo
-# }
+# Allows the file to be imported using `mn --custom <filename> --topo dcbasic`
+ topos = {
+    'dcbasic': DatacenterBasicTopo
+ }

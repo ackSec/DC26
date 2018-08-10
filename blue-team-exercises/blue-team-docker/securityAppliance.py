@@ -104,103 +104,48 @@ def main():
             'curl',
             'http://controllerAddress:8080/wm/staticentrypusher/clear/all/json'
         ])
-
-
-        # traffic flow from attacker host (10.0.0.1) to victim host (10.0.0.2)
-
-        flow200 = {
-            'switch': "00:00:00:00:00:00:00:01",
-            "name": "flow_mod_200",
-            "cookie": "0",
-            "priority": "100",
+        flow1 = {
+            'switch':"00:00:00:00:00:00:00:01",
+            "name":"flow_mod_1",
+            "cookie":"0",
+            "priority":"32768",
             "in_port":"1",
             "ipv4_src":"10.0.0.1",
             "ipv4_dst":"10.0.0.2",
             "eth_type":"0x0800",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_dst->10.0.0.10, output=3"
+            "actions":"output=3"
         }
 
-        flow210 = {
+        flow11 = {
             'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_210",
+            "name":"flow_mod_11",
             "cookie":"0",
-            "priority": "100",
+            "priority":"32768",
             "in_port":"1",
             "ip_proto":"0x01",
+        #    "ipv4_src":"10.0.0.1",
+        #    "ipv4_dst":"10.0.0.2",
             "eth_type":"0x0800",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_dst->10.0.0.10, output=3"
+            "actions":"output=3"
         }
 
-        flow220 = {
+        flow12 = {
             'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_220",
+            "name":"flow_mod_12",
             "cookie":"0",
-            "priority": "100",
+            "priority":"32768",
             "in_port":"1",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_dst->10.0.0.10, output=3"
+            "actions":"output=3"
         }
-        print("Flow 2 Generated")
-        pusher.set(flow200)
-        pusher.set(flow210)
-        pusher.set(flow220)
-        print("Flow 2 Sent")
 
-
-
-        # SW3
-        # traffic flow from "victim" honeynet host (10.0.0.10) to attacker host (10.0.0.1)
-
-        flow100 = {
-            'switch': "00:00:00:00:00:00:00:03",
-            "name": "flow_mod_100",
-            "cookie": "0",
-            "priority": "100",
-            "in_port":"1",
-            "ipv4_src":"10.0.0.2",
-            "ipv4_dst":"10.0.0.1",
-            "eth_type":"0x0800",
-            "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_src->10.0.0.2, output=2"
-
-        }
-        flow110 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_110",
+        flow2 = {
+            'switch':"00:00:00:00:00:00:00:01",
+            "name":"flow_mod_2",
             "cookie":"0",
-            "priority": "100",
-            "in_port":"1",
-            "ip_proto":"0x01",
-            "eth_type":"0x0800",
-            "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_src->10.0.0.2, output=2"
-        }
-
-        flow120 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_120",
-            "cookie":"0",
-            "priority": "100",
-            "in_port":"1",
-            "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_src->10.0.0.2, output=2"
-        }
-
-        print("Flow 1 Generated")
-        pusher.set(flow100)
-        pusher.set(flow110)
-        pusher.set(flow120)
-        print("Flow 1 Sent")
-
-        # SW1
-        # traffic from honeynet (10.0.0.10) going back to the attacker host (10.0.0.1)
-        flow300 = {
-            'switch': "00:00:00:00:00:00:00:01",
-            "name": "flow_mod_300",
-            "cookie": "0",
-            "priority": "100",
+            "priority":"32768",
             "in_port":"3",
             "ipv4_src":"10.0.0.2",
             "ipv4_dst":"10.0.0.1",
@@ -209,33 +154,127 @@ def main():
             "actions":"output=1"
         }
 
-        flow310 = {
+        flow21 = {
             'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_310",
+            "name":"flow_mod_21",
             "cookie":"0",
-            "priority": "100",
+            "priority":"32768",
             "in_port":"3",
             "ip_proto":"0x01",
+        #    "ipv4_src":"10.0.0.2",
+        #    "ipv4_dst":"10.0.0.1",
             "eth_type":"0x0800",
             "active":"true",
             "actions":"output=1"
         }
 
-        flow320 = {
+        flow22 = {
             'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_320",
+            "name":"flow_mod_22",
             "cookie":"0",
-            "priority": "100",
+            "priority":"32768",
             "in_port":"3",
             "active":"true",
             "actions":"output=1"
         }
-        print("Flow 3 Generated")
-        pusher.set(flow300)
-        pusher.set(flow310)
-        pusher.set(flow320)
-        print("Flow 3 Sent")
+
+        #SW2
+
+        flow3 = {
+            'switch':"00:00:00:00:00:00:00:03",
+            "name":"flow_mod_3",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"1",
+            "ipv4_src":"10.0.0.2",
+            "ipv4_dst":"10.0.0.1",
+            "eth_type":"0x0800",
+            "active":"true",
+            "actions":"output=2"
+        }
+
+        flow31 = {
+            'switch':"00:00:00:00:00:00:00:03",
+            "name":"flow_mod_31",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"1",
+            "ip_proto":"0x01",
+        #    "ipv4_src":"10.0.0.2",
+        #    "ipv4_dst":"10.0.0.1",
+            "eth_type":"0x0800",
+            "active":"true",
+            "actions":"output=2"
+        }
+
+        flow32 = {
+            'switch':"00:00:00:00:00:00:00:03",
+            "name":"flow_mod_32",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"1",
+            "active":"true",
+            "actions":"output=2"
+        }
+
+        flow4 = {
+            'switch':"00:00:00:00:00:00:00:03",
+            "name":"flow_mod_4",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"2",
+            "ipv4_src":"10.0.0.1",
+            "ipv4_dst":"10.0.0.2",
+            "eth_type":"0x0800",
+            "active":"true",
+            "actions":"output=1"
+        }
+
+        flow41 = {
+            'switch':"00:00:00:00:00:00:00:03",
+            "name":"flow_mod_41",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"2",
+            "ip_proto":"0x01",
+        #    "ipv4_src":"10.0.0.1",
+        #    "ipv4_dst":"10.0.0.2",
+            "eth_type":"0x0800",
+            "active":"true",
+            "actions":"output=1"
+        }
+
+        flow42 = {
+            'switch':"00:00:00:00:00:00:00:03",
+            "name":"flow_mod_42",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"2",
+            "active":"true",
+            "actions":"output=1"
+        }
+
+        #info('*** Pushing Defense flows\n')
+
+        # TCP Flows
+        pusher.set(flow1)
+        pusher.set(flow2)
+        pusher.set(flow3)
+        pusher.set(flow4)
+
+        #ICMP Flows
+        pusher.set(flow11)
+        pusher.set(flow21)
+        pusher.set(flow31)
+        pusher.set(flow41)
+
+        # port to port flows
+        pusher.set(flow12)
+        pusher.set(flow22)
+        pusher.set(flow32)
+        pusher.set(flow42)
         break
+
 
 
 if __name__ == '__main__':

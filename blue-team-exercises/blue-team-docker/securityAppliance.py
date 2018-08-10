@@ -16,6 +16,7 @@ import os
 import sys
 import dpkt
 import socket
+import subprocess
 from snortunsock import snort_listener
 
 
@@ -91,63 +92,141 @@ def main():
               (ip_to_str(ip.src), ip_to_str(ip.dst), ip.len, ip.ttl,
                do_not_fragment, more_fragments, fragment_offset)
 
-    #print('alertmsg: %s' % ''.join(msg.alertmsg))
+        #print('alertmsg: %s' % ''.join(msg.alertmsg))
         attacker = ip_to_str(ip.src)
         victim = ip_to_str(ip.dst)
         honeynet = "10.0.0.10"
         print("Generating Flows for SDN Controller based on rule triggered")
+        # Clear Existing flows
+        subprocess.call(['curl http://controllerAddress:8080/wm/staticentrypusher/clear/all/json'])
 
-        # SW2
-        # traffic flow from victim host (10.0.0.2) to attacker host (10.0.0.1)
-
-        flow1 = {
-            'switch': "00:00:00:00:00:00:00:02",
-            "name": "flow_mod_1",
-            "cookie": "0",
-            "priority": "32768",
-            "in_port":"2",
-            "ipv4_src": + victim,
-            "ipv4_dst": + attacker,
-            "eth_type":"0x0800",
-            "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_src->10.0.0.10, output=1"
-
-        }
-        print("Flow 1 Generated")
-        pusher.set(flow1)
-        print("Flow 1 Sent")
         # traffic flow from attacker host (10.0.0.1) to victim host (10.0.0.2)
-        flow2 = {
-            'switch': "00:00:00:00:00:00:00:02",
-            "name": "flow_mod_2",
+        flow200 = {
+            'switch': "00:00:00:00:00:00:00:01",
+            "name": "flow_mod_200",
             "cookie": "0",
             "priority": "32768",
-            "match": "in_port:1",
+            "in_port":"1",
             "ipv4_src": + attacker,
             "ipv4_dst": + victim,
             "eth_type":"0x0800",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_dst->" + victim + ", output=2"
+            "instruction_apply_actions": "set_field=ipv4_dst->" + honeynet + ", output=3"
+        }
+
+        flow210 = {
+            'switch':"00:00:00:00:00:00:00:01",
+            "name":"flow_mod_210",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"1",
+            "ip_proto":"0x01",
+            "eth_type":"0x0800",
+            "active":"true",
+            "instruction_apply_actions": "set_field=ipv4_dst->" + honeynet + ", output=3"
+        }
+
+        flow220 = {
+            'switch':"00:00:00:00:00:00:00:01",
+            "name":"flow_mod_220",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"1",
+            "active":"true",
+            "instruction_apply_actions": "set_field=ipv4_dst->" + honeynet + ", output=3"
         }
         print("Flow 2 Generated")
-        pusher.set(flow2)
+        pusher.set(flow200)
+        pusher.set(flow210)
+        pusher.set(flow220)
         print("Flow 2 Sent")
+
+
+
         # SW3
-        # traffic from honeynet (10.0.0.10) going through SW3 and back to the attacker host (10.0.0.1)
-        flow3 = {
+        # traffic flow from "victim" honeynet host (10.0.0.10) to attacker host (10.0.0.1)
+
+        flow100 = {
             'switch': "00:00:00:00:00:00:00:03",
-            "name": "flow_mod_3",
+            "name": "flow_mod_100",
             "cookie": "0",
             "priority": "32768",
-            "in_port":"3",
-            "ipv4_src": + honeynet,
+            "in_port":"1",
+            "ipv4_src": + victim,
             "ipv4_dst": + attacker,
             "eth_type":"0x0800",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=1"
+            "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=2"
+
+        }
+        flow110 = {
+            'switch':"00:00:00:00:00:00:00:03",
+            "name":"flow_mod_110",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"1",
+            "ip_proto":"0x01",
+            "eth_type":"0x0800",
+            "active":"true",
+            "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=2"
+        }
+
+        flow120 = {
+            'switch':"00:00:00:00:00:00:00:03",
+            "name":"flow_mod_120",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"1",
+            "active":"true",
+            "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=2"
+        }
+
+        print("Flow 1 Generated")
+        pusher.set(flow100)
+        pusher.set(flow110)
+        pusher.set(flow120)
+        print("Flow 1 Sent")
+
+        # SW1
+        # traffic from honeynet (10.0.0.10) going back to the attacker host (10.0.0.1)
+        flow300 = {
+            'switch': "00:00:00:00:00:00:00:01",
+            "name": "flow_mod_300",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port":"3",
+            "ipv4_src": + victim,
+            "ipv4_dst": + attacker,
+            "eth_type":"0x0800",
+            "active":"true",
+            "actions":"output=1"
+        }
+
+        flow310 = {
+            'switch':"00:00:00:00:00:00:00:01",
+            "name":"flow_mod_310",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"3",
+            "ip_proto":"0x01",
+            "eth_type":"0x0800",
+            "active":"true",
+            "actions":"output=1"
+        }
+
+        flow320 = {
+            'switch':"00:00:00:00:00:00:00:01",
+            "name":"flow_mod_320",
+            "cookie":"0",
+            "priority":"32768",
+            "in_port":"3",
+            "active":"true",
+            "actions":"output=1"
         }
         print("Flow 3 Generated")
-        pusher.set(flow2)
+        pusher.set(flow300)
+        pusher.set(flow310)
+        pusher.set(flow320)
         print("Flow 3 Sent")
         break
 

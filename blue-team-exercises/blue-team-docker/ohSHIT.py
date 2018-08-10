@@ -8,7 +8,7 @@ import httplib
 import json
 import os
 import sys
-
+import subprocess
 
 class StaticFlowPusher(object):
 
@@ -33,6 +33,7 @@ class StaticFlowPusher(object):
             'Content-type': 'application/json',
             'Accept': 'application/json',
         }
+
         body = json.dumps(data)
         conn = httplib.HTTPConnection(self.server, 8080)
         conn.request(action, path, body, headers)
@@ -52,10 +53,7 @@ def main():
         print("Generating Flows for SDN Controller based on rule triggered")
         print("Clearing Existing Flows")
 
-        clear = {
-            'switch': "all"
-        }
-        pusher.get(clear)
+        subprocess.call(['curl http://$CONTROLLER_IP:8080/wm/staticentrypusher/clear/all/json'])
         print("Flows cleared")
 
         # SW2

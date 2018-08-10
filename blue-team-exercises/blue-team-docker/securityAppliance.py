@@ -104,8 +104,6 @@ def main():
             'curl',
             'http://controllerAddress:8080/wm/staticentrypusher/clear/all/json'
         ])
-
-
         flow1 = {
             'switch':"00:00:00:00:00:00:00:01",
             "name":"flow_mod_1",
@@ -256,7 +254,26 @@ def main():
             "actions":"output=1"
         }
 
+        info('*** Pushing Defense flows\n')
 
+        # TCP Flows
+        pusher.set(flow1)
+        pusher.set(flow2)
+        pusher.set(flow3)
+        pusher.set(flow4)
+
+        #ICMP Flows
+        pusher.set(flow11)
+        pusher.set(flow21)
+        pusher.set(flow31)
+        pusher.set(flow41)
+
+        # port to port flows
+        pusher.set(flow12)
+        pusher.set(flow22)
+        pusher.set(flow32)
+        pusher.set(flow42)
+        break
 
 
 

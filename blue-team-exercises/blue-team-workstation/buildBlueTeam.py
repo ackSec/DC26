@@ -11,6 +11,7 @@ from mininet.link import TCLink
 from mininet.log import info, setLogLevel
 setLogLevel('info')
 
+
 class StaticEntryPusher(object):
 
     def __init__(self, server):
@@ -36,7 +37,7 @@ class StaticEntryPusher(object):
         headers = {
             'Content-type': 'application/json',
             'Accept': 'application/json',
-            }
+        }
         body = json.dumps(data)
         conn = httplib.HTTPConnection(self.server, 8080)
         conn.request(action, path, body, headers)
@@ -46,189 +47,194 @@ class StaticEntryPusher(object):
         conn.close()
         return ret
 
+
 net = Containernet(controller=RemoteController)
 controllerIP = repr(os.environ.get('CONTROLLER_IP'))
 pusher = StaticEntryPusher("controllerAddress")
 
 flow1 = {
-    'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_1",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"1",
-    "ipv4_src":"10.0.0.1",
-    "ipv4_dst":"10.0.0.2",
-    "eth_type":"0x0800",
-    "active":"true",
-    "actions":"output=2"
+    'switch': "00:00:00:00:00:00:00:01",
+    "name": "flow_mod_1",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "1",
+    "ipv4_src": "10.0.0.1",
+    "ipv4_dst": "10.0.0.2",
+    "eth_type": "0x0800",
+    "active": "true",
+    "actions": "output=2"
 }
 
 flow11 = {
-    'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_11",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"1",
-    "ip_proto":"0x01",
-#    "ipv4_src":"10.0.0.1",
-#    "ipv4_dst":"10.0.0.2",
-    "eth_type":"0x0800",
-    "active":"true",
-    "actions":"output=2"
+    'switch': "00:00:00:00:00:00:00:01",
+    "name": "flow_mod_11",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "1",
+    "ip_proto": "0x01",
+    #    "ipv4_src":"10.0.0.1",
+    #    "ipv4_dst":"10.0.0.2",
+    "eth_type": "0x0800",
+    "active": "true",
+    "actions": "output=2"
 }
 
 flow12 = {
-    'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_12",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"1",
-    "active":"true",
-    "actions":"output=2"
+    'switch': "00:00:00:00:00:00:00:01",
+    "name": "flow_mod_12",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "1",
+    "active": "true",
+    "actions": "output=2"
 }
 
 flow2 = {
-    'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_2",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"2",
-    "ipv4_src":"10.0.0.2",
-    "ipv4_dst":"10.0.0.1",
-    "eth_type":"0x0800",
-    "active":"true",
-    "actions":"output=1"
+    'switch': "00:00:00:00:00:00:00:01",
+    "name": "flow_mod_2",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "2",
+    "ipv4_src": "10.0.0.2",
+    "ipv4_dst": "10.0.0.1",
+    "eth_type": "0x0800",
+    "active": "true",
+    "actions": "output=1"
 }
 
 flow21 = {
-    'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_21",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"2",
-    "ip_proto":"0x01",
-#    "ipv4_src":"10.0.0.2",
-#    "ipv4_dst":"10.0.0.1",
-    "eth_type":"0x0800",
-    "active":"true",
-    "actions":"output=1"
+    'switch': "00:00:00:00:00:00:00:01",
+    "name": "flow_mod_21",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "2",
+    "ip_proto": "0x01",
+    #    "ipv4_src":"10.0.0.2",
+    #    "ipv4_dst":"10.0.0.1",
+    "eth_type": "0x0800",
+    "active": "true",
+    "actions": "output=1"
 }
 
 flow22 = {
-    'switch':"00:00:00:00:00:00:00:01",
-    "name":"flow_mod_22",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"2",
-    "active":"true",
-    "actions":"output=1"
+    'switch': "00:00:00:00:00:00:00:01",
+    "name": "flow_mod_22",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "2",
+    "active": "true",
+    "actions": "output=1"
 }
 
-#SW2
+# SW2
 
 flow3 = {
-    'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_3",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"1",
-    "ipv4_src":"10.0.0.2",
-    "ipv4_dst":"10.0.0.1",
-    "eth_type":"0x0800",
-    "active":"true",
-    "actions":"output=2"
+    'switch': "00:00:00:00:00:00:00:02",
+    "name": "flow_mod_3",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "1",
+    "ipv4_src": "10.0.0.2",
+    "ipv4_dst": "10.0.0.1",
+    "eth_type": "0x0800",
+    "active": "true",
+    "actions": "output=2"
 }
 
 flow31 = {
-    'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_31",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"1",
-    "ip_proto":"0x01",
-#    "ipv4_src":"10.0.0.2",
-#    "ipv4_dst":"10.0.0.1",
-    "eth_type":"0x0800",
-    "active":"true",
-    "actions":"output=2"
+    'switch': "00:00:00:00:00:00:00:02",
+    "name": "flow_mod_31",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "1",
+    "ip_proto": "0x01",
+    #    "ipv4_src":"10.0.0.2",
+    #    "ipv4_dst":"10.0.0.1",
+    "eth_type": "0x0800",
+    "active": "true",
+    "actions": "output=2"
 }
 
 flow32 = {
-    'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_32",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"1",
-    "active":"true",
-    "actions":"output=2"
+    'switch': "00:00:00:00:00:00:00:02",
+    "name": "flow_mod_32",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "1",
+    "active": "true",
+    "actions": "output=2"
 }
 
 flow4 = {
-    'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_4",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"2",
-    "ipv4_src":"10.0.0.1",
-    "ipv4_dst":"10.0.0.2",
-    "eth_type":"0x0800",
-    "active":"true",
-    "actions":"output=1"
+    'switch': "00:00:00:00:00:00:00:02",
+    "name": "flow_mod_4",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "2",
+    "ipv4_src": "10.0.0.1",
+    "ipv4_dst": "10.0.0.2",
+    "eth_type": "0x0800",
+    "active": "true",
+    "actions": "output=1"
 }
 
 flow41 = {
-    'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_41",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"2",
-    "ip_proto":"0x01",
-#    "ipv4_src":"10.0.0.1",
-#    "ipv4_dst":"10.0.0.2",
-    "eth_type":"0x0800",
-    "active":"true",
-    "actions":"output=1"
+    'switch': "00:00:00:00:00:00:00:02",
+    "name": "flow_mod_41",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "2",
+    "ip_proto": "0x01",
+    #    "ipv4_src":"10.0.0.1",
+    #    "ipv4_dst":"10.0.0.2",
+    "eth_type": "0x0800",
+    "active": "true",
+    "actions": "output=1"
 }
 
 flow42 = {
-    'switch':"00:00:00:00:00:00:00:02",
-    "name":"flow_mod_42",
-    "cookie":"0",
-    "priority":"32768",
-    "in_port":"2",
-    "active":"true",
-    "actions":"output=1"
+    'switch': "00:00:00:00:00:00:00:02",
+    "name": "flow_mod_42",
+    "cookie": "0",
+    "priority": "32768",
+    "in_port": "2",
+    "active": "true",
+    "actions": "output=1"
 }
 
-#drop honey - not sure if this is needed.  Confirm with Jon.
+# drop honey - not sure if this is needed.  Confirm with Jon.
 
 flow5 = {
-'switch':"00:00:00:00:00:00:00:03",
-"name":"flow_mod_8",
-"cookie":"0xbad",
-"table_id": "0",
-"priority":"32768",
-"idle_timeout": "0",
-"hard_timeout": "0",
-"in_port":"1",
-"action": ""
+    'switch': "00:00:00:00:00:00:00:03",
+    "name": "flow_mod_8",
+    "cookie": "0xbad",
+    "table_id": "0",
+    "priority": "32768",
+    "idle_timeout": "0",
+    "hard_timeout": "0",
+    "in_port": "1",
+    "action": ""
 }
 
 
 info('*** Adding controller at ' + controllerIP + '\n')
 
-net.addController( 'c0', controller=RemoteController, ip=controllerIP, port=6653 )
+net.addController('c0', controller=RemoteController,
+                  ip=controllerIP, port=6653)
 
 info('*** Adding docker containers\n')
 
-h1 = net.addDocker('attacker', ip='10.0.0.1', dimage="acksec/dc26", environment={"CONTROLLER_IP": controllerIP}, working_dir="/root")
-h2 = net.addDocker('victim', ip='10.0.0.2', dimage="acksec/snort", environment={"CONTROLLER_IP": controllerIP}, working_dir="/opt")
-h3 = net.addDocker('honeynet', ip='10.0.0.2', dimage="acksec/honeynet", environment={"CONTROLLER_IP": controllerIP})
+h1 = net.addDocker('attacker', ip='10.0.0.1', dimage="acksec/dc26",
+                   environment={"CONTROLLER_IP": controllerIP}, working_dir="/root")
+h2 = net.addDocker('victim', ip='10.0.0.2', dimage="acksec/snort",
+                   environment={"CONTROLLER_IP": controllerIP}, working_dir="/opt")
+h3 = net.addDocker('honeynet', ip='10.0.0.2', dimage="acksec/honeynet",
+                   environment={"CONTROLLER_IP": controllerIP})
 
 info('*** Adding switches\n')
-s1 = net.addSwitch ('s1')
-s2 = net.addSwitch ('s2')
-s3 = net.addSwitch ('s3')
+s1 = net.addSwitch('s1')
+s2 = net.addSwitch('s2')
+s3 = net.addSwitch('s3')
 
 info('*** Creating links\n')
 net.addLink(s1, s2, port1=2, port2=2)
@@ -250,7 +256,7 @@ pusher.set(flow2)
 pusher.set(flow3)
 pusher.set(flow4)
 
-#ICMP Flows
+# ICMP Flows
 pusher.set(flow11)
 pusher.set(flow21)
 pusher.set(flow31)

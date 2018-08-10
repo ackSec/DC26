@@ -105,153 +105,153 @@ def main():
             'http://controllerAddress:8080/wm/staticentrypusher/clear/all/json'
         ])
         flow1 = {
-            'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_1",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"1",
-            "ipv4_src":"10.0.0.1",
-            "ipv4_dst":"10.0.0.2",
-            "eth_type":"0x0800",
-            "active":"true",
-            "actions":"output=3"
+            'switch': "00:00:00:00:00:00:00:01",
+            "name": "flow_mod_1",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "1",
+            "ipv4_src": "10.0.0.1",
+            "ipv4_dst": "10.0.0.2",
+            "eth_type": "0x0800",
+            "active": "true",
+            "actions": "output=3"
         }
 
         flow11 = {
-            'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_11",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"1",
-            "ip_proto":"0x01",
-        #    "ipv4_src":"10.0.0.1",
-        #    "ipv4_dst":"10.0.0.2",
-            "eth_type":"0x0800",
-            "active":"true",
-            "actions":"output=3"
+            'switch': "00:00:00:00:00:00:00:01",
+            "name": "flow_mod_11",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "1",
+            "ip_proto": "0x01",
+            #    "ipv4_src":"10.0.0.1",
+            #    "ipv4_dst":"10.0.0.2",
+            "eth_type": "0x0800",
+            "active": "true",
+            "actions": "output=3"
         }
 
         flow12 = {
-            'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_12",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"1",
-            "active":"true",
-            "actions":"output=3"
+            'switch': "00:00:00:00:00:00:00:01",
+            "name": "flow_mod_12",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "1",
+            "active": "true",
+            "actions": "output=3"
         }
 
         flow2 = {
-            'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_2",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"3",
-            "ipv4_src":"10.0.0.2",
-            "ipv4_dst":"10.0.0.1",
-            "eth_type":"0x0800",
-            "active":"true",
-            "actions":"output=1"
+            'switch': "00:00:00:00:00:00:00:01",
+            "name": "flow_mod_2",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "3",
+            "ipv4_src": "10.0.0.2",
+            "ipv4_dst": "10.0.0.1",
+            "eth_type": "0x0800",
+            "active": "true",
+            "actions": "output=1"
         }
 
         flow21 = {
-            'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_21",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"3",
-            "ip_proto":"0x01",
-        #    "ipv4_src":"10.0.0.2",
-        #    "ipv4_dst":"10.0.0.1",
-            "eth_type":"0x0800",
-            "active":"true",
-            "actions":"output=1"
+            'switch': "00:00:00:00:00:00:00:01",
+            "name": "flow_mod_21",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "3",
+            "ip_proto": "0x01",
+            #    "ipv4_src":"10.0.0.2",
+            #    "ipv4_dst":"10.0.0.1",
+            "eth_type": "0x0800",
+            "active": "true",
+            "actions": "output=1"
         }
 
         flow22 = {
-            'switch':"00:00:00:00:00:00:00:01",
-            "name":"flow_mod_22",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"3",
-            "active":"true",
-            "actions":"output=1"
+            'switch': "00:00:00:00:00:00:00:01",
+            "name": "flow_mod_22",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "3",
+            "active": "true",
+            "actions": "output=1"
         }
 
-        #SW2
+        # SW2
 
         flow3 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_3",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"1",
-            "ipv4_src":"10.0.0.2",
-            "ipv4_dst":"10.0.0.1",
-            "eth_type":"0x0800",
-            "active":"true",
-            "actions":"output=2"
+            'switch': "00:00:00:00:00:00:00:03",
+            "name": "flow_mod_3",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "1",
+            "ipv4_src": "10.0.0.2",
+            "ipv4_dst": "10.0.0.1",
+            "eth_type": "0x0800",
+            "active": "true",
+            "actions": "output=2"
         }
 
         flow31 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_31",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"1",
-            "ip_proto":"0x01",
-        #    "ipv4_src":"10.0.0.2",
-        #    "ipv4_dst":"10.0.0.1",
-            "eth_type":"0x0800",
-            "active":"true",
-            "actions":"output=2"
+            'switch': "00:00:00:00:00:00:00:03",
+            "name": "flow_mod_31",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "1",
+            "ip_proto": "0x01",
+            #    "ipv4_src":"10.0.0.2",
+            #    "ipv4_dst":"10.0.0.1",
+            "eth_type": "0x0800",
+            "active": "true",
+            "actions": "output=2"
         }
 
         flow32 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_32",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"1",
-            "active":"true",
-            "actions":"output=2"
+            'switch': "00:00:00:00:00:00:00:03",
+            "name": "flow_mod_32",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "1",
+            "active": "true",
+            "actions": "output=2"
         }
 
         flow4 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_4",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"2",
-            "ipv4_src":"10.0.0.1",
-            "ipv4_dst":"10.0.0.2",
-            "eth_type":"0x0800",
-            "active":"true",
-            "actions":"output=1"
+            'switch': "00:00:00:00:00:00:00:03",
+            "name": "flow_mod_4",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "2",
+            "ipv4_src": "10.0.0.1",
+            "ipv4_dst": "10.0.0.2",
+            "eth_type": "0x0800",
+            "active": "true",
+            "actions": "output=1"
         }
 
         flow41 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_41",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"2",
-            "ip_proto":"0x01",
-        #    "ipv4_src":"10.0.0.1",
-        #    "ipv4_dst":"10.0.0.2",
-            "eth_type":"0x0800",
-            "active":"true",
-            "actions":"output=1"
+            'switch': "00:00:00:00:00:00:00:03",
+            "name": "flow_mod_41",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "2",
+            "ip_proto": "0x01",
+            #    "ipv4_src":"10.0.0.1",
+            #    "ipv4_dst":"10.0.0.2",
+            "eth_type": "0x0800",
+            "active": "true",
+            "actions": "output=1"
         }
 
         flow42 = {
-            'switch':"00:00:00:00:00:00:00:03",
-            "name":"flow_mod_42",
-            "cookie":"0",
-            "priority":"32768",
-            "in_port":"2",
-            "active":"true",
-            "actions":"output=1"
+            'switch': "00:00:00:00:00:00:00:03",
+            "name": "flow_mod_42",
+            "cookie": "0",
+            "priority": "32768",
+            "in_port": "2",
+            "active": "true",
+            "actions": "output=1"
         }
 
         #info('*** Pushing Defense flows\n')
@@ -262,7 +262,7 @@ def main():
         pusher.set(flow3)
         pusher.set(flow4)
 
-        #ICMP Flows
+        # ICMP Flows
         pusher.set(flow11)
         pusher.set(flow21)
         pusher.set(flow31)
@@ -274,7 +274,6 @@ def main():
         pusher.set(flow32)
         pusher.set(flow42)
         break
-
 
 
 if __name__ == '__main__':

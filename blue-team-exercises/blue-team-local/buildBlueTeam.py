@@ -221,9 +221,9 @@ net.addController( 'c0', controller=RemoteController, ip=controllerIP, port=6653
 
 info('*** Adding docker containers\n')
 
-h1 = net.addDocker('attacker', ip='10.0.0.1', dimage="acksec/dc26", environment={"CONTROLLER_IP": 'controllerIP'}, working_dir="/root")
-h2 = net.addDocker('victim', ip='10.0.0.2', dimage="acksec/snort", environment={"CONTROLLER_IP": 'controllerIP'}, working_dir="/opt")
-h3 = net.addDocker('honeynet', ip='10.0.0.10', dimage="acksec/honeynet", environment={"CONTROLLER_IP": 'controllerIP'})
+h1 = net.addDocker('attacker', ip='10.0.0.1', dimage="acksec/dc26", environment={"CONTROLLER_IP": controllerIP}, working_dir="/root")
+h2 = net.addDocker('victim', ip='10.0.0.2', dimage="acksec/snort", environment={"CONTROLLER_IP": controllerIP}, working_dir="/opt")
+h3 = net.addDocker('honeynet', ip='10.0.0.10', dimage="acksec/honeynet", environment={"CONTROLLER_IP": controllerIP})
 
 info('*** Adding switches\n')
 s1 = net.addSwitch ('s1')

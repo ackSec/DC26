@@ -108,11 +108,11 @@ def main():
             "cookie": "0",
             "priority": "100",
             "in_port":"1",
-            "ipv4_src": + attacker,
-            "ipv4_dst": + victim,
+            "ipv4_src":"10.0.0.1",
+            "ipv4_dst":"10.0.0.2",
             "eth_type":"0x0800",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_dst->" + honeynet + ", output=3"
+            "instruction_apply_actions": "set_field=ipv4_dst->10.0.0.10, output=3"
         }
 
         flow210 = {
@@ -124,7 +124,7 @@ def main():
             "ip_proto":"0x01",
             "eth_type":"0x0800",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_dst->" + honeynet + ", output=3"
+            "instruction_apply_actions": "set_field=ipv4_dst->10.0.0.10, output=3"
         }
 
         flow220 = {
@@ -134,7 +134,7 @@ def main():
             "priority": "100",
             "in_port":"1",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_dst->" + honeynet + ", output=3"
+            "instruction_apply_actions": "set_field=ipv4_dst->10.0.0.10, output=3"
         }
         print("Flow 2 Generated")
         pusher.set(flow200)
@@ -153,11 +153,11 @@ def main():
             "cookie": "0",
             "priority": "100",
             "in_port":"1",
-            "ipv4_src": + victim,
-            "ipv4_dst": + attacker,
+            "ipv4_src":"10.0.0.2",
+            "ipv4_dst":"10.0.0.1",
             "eth_type":"0x0800",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=2"
+            "instruction_apply_actions": "set_field=ipv4_src->10.0.0.2, output=2"
 
         }
         flow110 = {
@@ -169,7 +169,7 @@ def main():
             "ip_proto":"0x01",
             "eth_type":"0x0800",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=2"
+            "instruction_apply_actions": "set_field=ipv4_src->10.0.0.2, output=2"
         }
 
         flow120 = {
@@ -179,7 +179,7 @@ def main():
             "priority": "100",
             "in_port":"1",
             "active":"true",
-            "instruction_apply_actions": "set_field=ipv4_src->" + victim + ", output=2"
+            "instruction_apply_actions": "set_field=ipv4_src->10.0.0.2, output=2"
         }
 
         print("Flow 1 Generated")
@@ -196,8 +196,8 @@ def main():
             "cookie": "0",
             "priority": "100",
             "in_port":"3",
-            "ipv4_src": + victim,
-            "ipv4_dst": + attacker,
+            "ipv4_src":"10.0.0.2",
+            "ipv4_dst":"10.0.0.1,
             "eth_type":"0x0800",
             "active":"true",
             "actions":"output=1"

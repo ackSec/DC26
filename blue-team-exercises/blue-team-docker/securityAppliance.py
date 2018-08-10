@@ -254,7 +254,7 @@ def main():
             "actions":"output=1"
         }
 
-        info('*** Pushing Defense flows\n')
+        #info('*** Pushing Defense flows\n')
 
         # TCP Flows
         pusher.set(flow1)

@@ -98,8 +98,8 @@ def main():
         honeynet = "10.0.0.10"
         print("Generating Flows for SDN Controller based on rule triggered")
         # Clear Existing flows
-        subprocess.call(['curl http://controllerAddress:8080/wm/staticentrypusher/clear/all/json'])
-
+        #subprocess.call(['curl http://controllerAddress:8080/wm/staticentrypusher/clear/all/json'])
+        pusher.remove('/wm/staticflowpusher/json', {"name": "flow-mod-1"})
         # traffic flow from attacker host (10.0.0.1) to victim host (10.0.0.2)
         flow200 = {
             'switch': "00:00:00:00:00:00:00:01",

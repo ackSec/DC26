@@ -62,7 +62,7 @@ class StaticFlowPusher(object):
 
 
 controllerIP = repr(os.environ.get('CONTROLLER_IP'))
-pusher = StaticFlowPusher("controllerAddress")
+pusher = StaticFlowPusher(controllerAddress)
 
 
 def main():
@@ -100,6 +100,12 @@ def main():
         # Clear Existing flows
         #subprocess.call(['curl http://controllerAddress:8080/wm/staticentrypusher/clear/all/json'])
         #pusher.remove('/wm/staticflowpusher/json', {'switch':"00:00:00:00:00:00:00:01","name": "flow-mod-1"})
+        subprocess.call([
+            'curl',
+            'http://controllerAddress:8080/wm/staticentrypusher/clear/all/json'
+        ])
+
+
         # traffic flow from attacker host (10.0.0.1) to victim host (10.0.0.2)
 
         flow200 = {
